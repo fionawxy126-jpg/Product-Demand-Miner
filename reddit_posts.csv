@@ -1,0 +1,1180 @@
+﻿id,title,body,subreddit,score,num_comments,url,created_utc,keyword
+t3_1srzhd7,PSA: Claude Pro no longer lists Claude Code as an included feature,"Just noticed while checking the pricing page. Claude Code is no longer listed as a feature of the Pro plan.
+
+Source: [https://claude.com/pricing](https://claude.com/pricing)
+
+Did I miss an announcement?
+
+EDIT: the support article at [https://support.claude.com/en/articles/11145838-using-claude-code-with-your-max-plan](https://support.claude.com/en/articles/11145838-using-claude-code-with-your-max-plan) is now titled ""Using Claude Code with your Max plan"", if you Google ""claude code pro plan"" the",ClaudeAI,2965,734,https://reddit.com/r/ClaudeAI/comments/1srzhd7/psa_claude_pro_no_longer_lists_claude_code_as_an/,2026-04-22,Claude Code
+t3_1sd2f37,I built an AI job search system with Claude Code that scored 740+ offers and landed me a job. Just open sourced it.,"`Edit: title should say ""scored 740+ listings"" not ""offers"": it evaluated 740+ job postings, not 740 actual job offers. my bad on the wording.`  
+  
+A few weeks ago I shared a video of this system on r/SideProject (534 upvotes). A lot of people asked for the code, so I cleaned it up and open sourced it.
+
+**What it is:** A Claude Code project that turns your terminal into a job search command center. You paste a job URL, and it evaluates the offer, generates a tailored PDF resume, and tracks ever",ClaudeAI,2800,247,https://reddit.com/r/ClaudeAI/comments/1sd2f37/i_built_an_ai_job_search_system_with_claude_code/,2026-04-05,Claude Code
+t3_1ss5fi4,Anthropic response to Claude Code change,"&gt;For clarity, we're running a small test on \~2% of new prosumer signups. Existing Pro and Max subscribers aren't affected.  
+When we launched Max a year ago, it didn't include Claude Code, Cowork didn't exist, and agents that run for hours weren't a thing. Max was designed for heavy chat usage, that's it.  
+Since then, we bundled Claude Code into Max and it took off after Opus 4. Cowork landed. Long-running async agents are now everyday workflows. The way people actually use a Claude subscri",ClaudeAI,1249,388,https://reddit.com/r/ClaudeAI/comments/1ss5fi4/anthropic_response_to_claude_code_change/,2026-04-22,Claude Code
+t3_1smciwx,Me when Claude already wrote like 3k lines of code and I notice an error on my prompt,Me when Claude already wrote like 3k lines of code and I notice an error on my prompt,ClaudeAI,5198,84,https://reddit.com/r/ClaudeAI/comments/1smciwx/me_when_claude_already_wrote_like_3k_lines_of/,2026-04-16,Claude Code
+t3_1t1o43w,I gave Claude Code a $0.02/call coworker and stopped hitting Pro limits — here's the full setup,"Was hitting my weekly Pro limit by Wednesday every single week. Tried compact, Sonnet for simple tasks, tighter prompts — nothing worked.
+
+Built a simple pattern: CLI scripts that delegate bulk file reading and boilerplate generation to Kimi K2.5 (any cheap model works). Claude calls them via Bash tool. [CLAUDE.md](http://CLAUDE.md) has routing rules for when to delegate vs when to use Claude's own intelligence.
+
+Results after 3 weeks:
+
+1. Haven't hit limits once
+2. Kimi total spend: $0.38
+3. Do",ClaudeAI,1714,176,https://reddit.com/r/ClaudeAI/comments/1t1o43w/i_gave_claude_code_a_002call_coworker_and_stopped/,2026-05-02,Claude Code
+t3_1svdm1w,"PSA: The string ""HERMES.md"" in your git commit history silently routes Claude Code billing to extra usage — cost me $200","TL;DR: If your git commits mention ""HERMES.md"" (uppercase), Claude Code quietly stops using your Max plan and starts billing you at API rates. Anthropic's support acknowledged the bug, thanked me for finding it, and refused a refund. Apparently their AI safety principles don't extend to your wallet.
+
+  
+**The story**
+
+I'm on Max 20x ($200/month). Today Claude Code started throwing:
+
+  
+\&gt; ""You're out of extra usage. Add more at [claude.ai/settings/usage](http://claude.ai/settings/usage) and k",ClaudeAI,1464,203,https://reddit.com/r/ClaudeAI/comments/1svdm1w/psa_the_string_hermesmd_in_your_git_commit/,2026-04-25,Claude Code
+t3_1ss3asp,Does Claude's $20 Plan No Longer Include Claude Code?,"Was looking at buying the $20 Plan today after a demonstration from a friend (and wanting to switch/try my options from Codex), but saw that Claude Code was not included. I wanted to ask if this was a temporary change, or if the Pro plan truly never had Claude Code, and I was mistaken. My friend has a Max plan, so I could just be mistaken. Thanks!
+
+Edit: Link to site: [https://claude.com/pricing](https://claude.com/pricing)
+
+Edit: Sorry, missed this earlier post. Mods - feel free to delete: [htt",ClaudeAI,991,272,https://reddit.com/r/ClaudeAI/comments/1ss3asp/does_claudes_20_plan_no_longer_include_claude_code/,2026-04-22,Claude Code
+t3_1sqv4g9,What two decades of data loss trauma does to a woman. (Claude Code),"I bought a Terramaster F4-425 Plus home NAS, along with a tiny 12V UPS. I used Claude Code on the NAS to analyze, reconstruct, and consolidate the corrupted data across 5 different hard drives into a new master library on the 16TB of RAID storage on the NAS. Rather than simply hashing files and folders and merging blindly, I had Claude actually review what it could find including hundreds of thousands of loose unfoldered files and figure out how to reconstruct lost folder structures by inference",ClaudeAI,1717,127,https://reddit.com/r/ClaudeAI/comments/1sqv4g9/what_two_decades_of_data_loss_trauma_does_to_a/,2026-04-21,Claude Code
+t3_1sxe7cf,"Claude-powered AI coding agent deletes entire company database in 9 seconds — backups zapped, after Cursor tool powered by Anthropic's Claude goes rogue",,ClaudeAI,964,190,https://reddit.com/r/ClaudeAI/comments/1sxe7cf/claudepowered_ai_coding_agent_deletes_entire/,2026-04-28,Claude Code
+t3_1sf2m3p,I made a USB-Claude who gets my attention when Claude Code finishes a response,,ClaudeAI,2656,77,https://reddit.com/r/ClaudeAI/comments/1sf2m3p/i_made_a_usbclaude_who_gets_my_attention_when/,2026-04-08,Claude Code
+t3_1sxi9mo,Anthropic just quietly locked Opus behind a paywall-within-a-paywall for Pro users in Claude Code,"If you're on Claude Pro and using Claude Code, you might have noticed something buried in their support docs:
+
+
+
+""When using a Pro plan with Claude Code, you will only be able to use Opus models after enabling and purchasing extra usage.""
+
+
+
+So let me get this straight:
+
+
+
+You pay $20/month for Pro
+
+You use Claude Code (which itself requires the Pro subscription)
+
+You want to use Opus, the flagship model
+
+You now need to pay extra on top of that
+
+
+
+The default model in Claude Code is Sonnet 4.5.",ClaudeAI,814,184,https://reddit.com/r/ClaudeAI/comments/1sxi9mo/anthropic_just_quietly_locked_opus_behind_a/,2026-04-28,Claude Code
+t3_1sn27yu,Claude Code workflow tips after 6 months of daily use (from a senior dev),"I’ve been using Claude Code daily for months now (I’m a senior full-stack dev). Here’s the workflow that's made me genuinely productive after a lot of trial and error.
+
+The basics that changed how I work:
+
+* **Use ""plan"" mode for anything complex.** Before Claude writes a single line, I let it lay out its approach. This saves me a lot of back-and-forth.
+* **Only ask for the first step.** If you say ""implement the whole feature"", it will go off the rails. That's why I usually just ask for step on",ClaudeAI,1004,132,https://reddit.com/r/ClaudeAI/comments/1sn27yu/claude_code_workflow_tips_after_6_months_of_daily/,2026-04-16,Claude Code
+t3_1se1kpr,"Claude Code v2.1.92 introduces Ultraplan — draft plans in the cloud, review in your browser, execute anywhere","Claude Code just shipped /ultraplan (beta) — you run it in your terminal, review the plan in your browser with inline comments, then execute remotely or send it back to your CLI. It shipped alongside Claude Code Web at [claude.ai/code](http://claude.ai/code), pushing toward cloud-first workflows while keeping the terminal as the power-user entry point. Anyone tried it yet?                                                                    
+
+  ",ClaudeAI,610,199,https://reddit.com/r/ClaudeAI/comments/1se1kpr/claude_code_v2192_introduces_ultraplan_draft/,2026-04-06,Claude Code
+t3_1sdmohb,"After months with Claude Code, the biggest time sink isn't bugs — it's silent fake success","I've been using Claude Code daily for months and there's a pattern that has cost me more debugging time than actual bugs: the agent making things *look* like they work when they don't.
+
+Here's what happens. You ask it to build something that fetches data from an API. It writes the code, you run it, data appears on screen. Looks correct. You move on.
+
+Three days later you discover the API integration was broken from the start. The agent couldn't get auth working, so it quietly inserted a try/catc",ClaudeAI,509,186,https://reddit.com/r/ClaudeAI/comments/1sdmohb/after_months_with_claude_code_the_biggest_time/,2026-04-06,Claude Code
+t3_1t4gfc7,Turned a desk lamp into a Claude Code status indicator,"Saw someone post a Claude Code lamp setup recently using this exact lamp, and I had to try it myself.
+
+Credit to the original open-source project: [https://github.com/bobek-balinek/claude-lamp](https://github.com/bobek-balinek/claude-lamp)
+
+It uses Claude Code hooks to trigger a Python script that sends Bluetooth commands to the lamp. Now it plays a blue spinning animation while Claude is busy working, glows pink when Claude needs input from me, and switches to warm white when idle.
+
+All of the ",ClaudeAI,1242,65,https://reddit.com/r/ClaudeAI/comments/1t4gfc7/turned_a_desk_lamp_into_a_claude_code_status/,2026-05-05,Claude Code
+t3_1skqub5,TUI to see where Claude Code tokens actually go,"been spending $200+/day on claude code and had zero visibility into what was eating the tokens. ccusage shows cost per model per day which is great but i wanted to know - is it the debugging thats expensive? the brainstorming? which project is burning the most?
+
+it reads the session transcripts claude code already stores on disk (\~/.claude/projects/) and classifies every turn into 13 categories based on tool usage patterns. no llm calls for the classification, fully deterministic.
+
+what it show",ClaudeAI,882,98,https://reddit.com/r/ClaudeAI/comments/1skqub5/tui_to_see_where_claude_code_tokens_actually_go/,2026-04-14,Claude Code
+t3_1sfxur8,i built a full iOS app with Claude in 2 months. zero coding background. here's what that actually looks like.,"got laid off from my work. had ADHD and no structure and no idea what to do with myself. decided to build the app i always wished existed: a productivity app that doesn't punish you for missing a day.
+
+i described what i wanted to Claude. Claude wrote the code. i tested it. we iterated. for 2 months.
+
+2 Apple rejections, both about subscription setup and terms of use placement, nothing about features. both fixable once i actually read what they were asking.
+
+launched March 25. one week in i rebu",ClaudeAI,332,208,https://reddit.com/r/ClaudeAI/comments/1sfxur8/i_built_a_full_ios_app_with_claude_in_2_months/,2026-04-09,Claude Code
+t3_1sm4kto,Built an anti-vibecoding tool for Claude Code - LinkedIn kinda went crazy for it,"https://preview.redd.it/u1u8hwhhjcvg1.png?width=1638&amp;format=png&amp;auto=webp&amp;s=c70e6aa7b9a738e0b6d6e64790ee31319cb4989b
+
+PLEASE NOTE:  
+\- I AM NOT AN EXPERIENCED DEV , THIS TOOL WAS MADE FOR MY PERSONAL USE INITIALLY, BUT I THOUGHT OF SHARING IT SO THAT IT CAN BE HELPFUL TO THE COMMUNITY.
+
+\- THIS TOOL IS NOT INTENDED TO BE USED ON LEGACY CODEBASES AS OF NOW. IT IS FOR INTENDED FOR BEGINNER DEVS WHO WANT TO LEARN WHILE THEY BUILD.
+
+\- IF YOU ARE SENIOR DEV, PLEASE AVOID USING THIS AS I",ClaudeAI,562,120,https://reddit.com/r/ClaudeAI/comments/1sm4kto/built_an_antivibecoding_tool_for_claude_code/,2026-04-15,Claude Code
+t3_1sv852q,Claude Code cheat sheet after 6 months of daily use,"Last week I shared a post about my Claude Code workflow and some related tips, and to be completely honest, I didn't expect such a positive response! Thank you all for sharing your own tips in the comments, I learned quite a bit just from reading the replies.
+
+Since people seemed to find it useful, I figured I’d share some more best practices. So here we go:
+
+* **Create skills for repetitive workflows**. If I find myself repeating the same instructions, I turn them into a skill. The real trick i",ClaudeAI,998,64,https://reddit.com/r/ClaudeAI/comments/1sv852q/claude_code_cheat_sheet_after_6_months_of_daily/,2026-04-25,Claude Code
+t3_1swy5r6,"Taught my 60-year-old dad (zero coding exp) Claude and Git in Feb. Today he built a RAG solution. I finally get ""vibe coding.""","My father teaches geology and has literally zero coding expertise. Back in February, I introduced him to Claude and taught him the absolute basics of how Git works. Fast forward to today: he actually implemented a functional RAG (Retrieval-Augmented Generation) solution for analyzing and querying his mineral documents.
+
+Seeing this happen made me finally understand why ""vibe coding"" has become such a thing. Don't get me wrong, I know a proper end-to-end solution engineer or architect is still le",ClaudeAI,551,95,https://reddit.com/r/ClaudeAI/comments/1swy5r6/taught_my_60yearold_dad_zero_coding_exp_claude/,2026-04-27,Claude Code
+t3_1sm23sp,I built a Claude Code plugin that extracts any website's full design system,"Just type `/extract-design` [`https://stripe.com`](https://stripe.com) in Claude Code and it pulls the entire design language — colors, fonts, spacing, shadows, components, everything.
+
+The main output is a markdown file specifically structured for Claude to understand. So you can extract a site's design, then tell Claude ""build me a landing page using this design system"" and it actually nails it because it has the exact tokens, scales, and component patterns.
+
+It also generates a Tailwind confi",ClaudeAI,575,91,https://reddit.com/r/ClaudeAI/comments/1sm23sp/i_built_a_claude_code_plugin_that_extracts_any/,2026-04-15,Claude Code
+t3_1stqjlp,Boris Cherny creator of claude code posted post-mortem report of claude,,ClaudeAI,331,135,https://reddit.com/r/ClaudeAI/comments/1stqjlp/boris_cherny_creator_of_claude_code_posted/,2026-04-24,Claude Code
+t3_1sdw589,I built 6 iOS apps in 3 months using Claude Code and they’re already making money,"A couple of months ago, I decided to stop overthinking ideas and just start shipping.
+
+No perfection. No endless polishing. Just simple and useful apps.
+
+I set myself a small challenge to build and publish consistently no matter what.
+
+In the last 3 months, I ended up launching 6 iOS apps on the App Store. Most of them are simple utility apps. Nothing groundbreaking, but built to solve small real problems.
+
+I used Claude Code to speed up development, which helped me go from idea to prototype to ",ClaudeAI,469,106,https://reddit.com/r/ClaudeAI/comments/1sdw589/i_built_6_ios_apps_in_3_months_using_claude_code/,2026-04-06,Claude Code
+t3_1slictc,"Claude Code on desktop, redesigned for parallel agentic work.","New sidebar for parallel sessions. Drag-and-drop layout. Integrated terminal. Run multiple agents from one window. 
+
+New tools make it easier to complete work without leaving the app.
+
+Integrated terminal, in-app file editing, HTML + PDF preview, and a rebuilt diff viewer. Drag any panel into the layout that fits how you work. Three view modes when you want more (or less) signal.
+
+Plus more updates and customizations to fit how you work including SSH for Mac, keyboard shortcuts, and CLI plugin p",ClaudeAI,362,119,https://reddit.com/r/ClaudeAI/comments/1slictc/claude_code_on_desktop_redesigned_for_parallel/,2026-04-15,Claude Code
+t3_1ss28rj,"I built a /graphify skill for Claude Code that maps your entire codebase into a knowledge graph, 71x fewer tokens, way less hallucination (32k stars, 250k downloads)","Every time I joined a new codebase I’d spend the first week asking Claude to “explain how X works”, watching it hallucinate, then reading 40 files to correct it. The problem isn’t the LLM — it’s that raw files are an awful context format.
+
+So I built graphify. Install it once in Claude Code and it builds a queryable knowledge graph of your repo. 32k GitHub stars and 250k+ PyPI downloads since launch.
+
+What it does:
+
+	•	Parses 25 languages via tree-sitter AST (Python, TS, Go, Rust, Java, C/C++, S",ClaudeAI,583,76,https://reddit.com/r/ClaudeAI/comments/1ss28rj/i_built_a_graphify_skill_for_claude_code_that/,2026-04-22,Claude Code
+t3_1sl79rh,"What if all AI coding tools shared the same memory? Claude Code, Cursor, Copilot — one persistent brain across all of them","Right now, every AI coding tool starts from scratch. You explain your project architecture to Claude Code, then explain it again to Cursor, then again when you paste something into ChatGPT. Same context, repeated endlessly.
+
+What if that changed?
+
+Imagine a shared memory layer where your coding preferences, project structure, decisions you've made, and even mistakes you've fixed once are available to any AI tool you use. Claude remembers you switched to a monorepo last month. Cursor knows you pr",ClaudeAI,0,14,https://reddit.com/r/ClaudeAI/comments/1sl79rh/what_if_all_ai_coding_tools_shared_the_same/,2026-04-14,Cursor AI
+t3_1t1azy3,How to give Claude Code 'Cursor AI' goggles,"Recently used Cursor AI (free tier for 3 free queries a month) to resolve an issue in 10 mins that Claude Code Opus could not resolve in 2 hours. 
+
+Simple reason was that Cursor quickly got a grasp on meaningful end to end parity relationships between my entire codebase and quickly hunted down the culprit. I was impressed and then I had questions.  
+
+Cursor charges almost the SAME sub cost $ as Claude code yet it is NOT an LLM.   
+Its a bunch of powerful proprietary toolsets designed to make you",ClaudeAI,0,4,https://reddit.com/r/ClaudeAI/comments/1t1azy3/how_to_give_claude_code_cursor_ai_goggles/,2026-05-02,Cursor AI
+t3_1sqp23e,I built an open source AI assistant that lives in your website's cursor,"inspired by [clicky](https://x.com/FarzaTV/status/2041314633978659092), I turned the idea into an npm package for the web, called cursor-buddy.
+
+you hold a shortcut, talk to it, and it can respond based on what’s on the page and point at things in the UI instead of just replying like a normal chat box. Can call any custom tools too.
+
+  
+since it's built with AI SDK, we can plug any claude model for the chat step.
+
+I’ve been using it and it feels weirdly natural in some cases, but I’m still tryin",ClaudeAI,0,1,https://reddit.com/r/ClaudeAI/comments/1sqp23e/i_built_an_open_source_ai_assistant_that_lives_in/,2026-04-20,Cursor AI
+t3_1sgy2q7,My dev team is burning through Claude / Cursor credits like crazy — how do you control AI usage in a team?,"I run a dev team of 15 engineers. Recently we started using AI tools like Claude, Cursor, and Windsurf.
+
+Initially, I tried:
+
+\- Shared Cursor/Windsurf accounts (2 people per seat)
+
+\- Then upgraded to multiple Claude Max subscriptions ($100 each)
+
+But we’re facing a serious issue:
+
+Developers are using AI in “full speed mode”:
+
+\- Spawning multiple agents
+
+\- Running large prompts
+
+\- No control on usage
+
+\- Credits get exhausted mid-day or within hours
+
+Even when I try to scale:
+
+\- If I buy m",ClaudeAI,1,2,https://reddit.com/r/ClaudeAI/comments/1sgy2q7/my_dev_team_is_burning_through_claude_cursor/,2026-04-10,Cursor AI
+t3_1sdrk6k,"I built a CLI that installs MCP, skills, prompts, commands and sub-agents into any AI tool (Cursor, Claude Code, Windsurf, etc.)","# Install Sub-agents, Skills, MCP Servers, Slash Commands and Prompts Across AI Tools with agent-add
+
+agent-add lets you install virtually every type of AI capability across tools — so you can focus on *what* to install and *where*, without worrying about each tool's config file format.
+
+https://preview.redd.it/kemovi39qitg1.jpg?width=1964&amp;format=pjpg&amp;auto=webp&amp;s=b994b81f343ee01afdf23392e13e0d472c71a47d
+
+It's especially useful when:
+
+* You're an AI capability developer shipping MCP s",ClaudeAI,0,1,https://reddit.com/r/ClaudeAI/comments/1sdrk6k/i_built_a_cli_that_installs_mcp_skills_prompts/,2026-04-06,Cursor AI
+t3_1sxzlh6,PullMD - gave Claude Code an MCP server so it stops burning tokens parsing HTML,"Hey all,
+
+Built this over the past few weeks because I got tired of two things:
+
+**1. Mobile copy-paste is awful.** Long Reddit thread or blog post on my phone, want to ask Claude about it. Long-press, drag selection handles past nav/sidebar/footer, copy, switch app, paste. None of that is hard, but it's annoying enough that I wanted to fix it.
+
+**2. Claude Code burns tokens on HTML boilerplate.** Letting it fetch raw HTML and parse the chrome out is wildly inefficient. A typical article is 80% ",ClaudeAI,384,58,https://reddit.com/r/ClaudeAI/comments/1sxzlh6/pullmd_gave_claude_code_an_mcp_server_so_it_stops/,2026-04-28,Cursor AI
+t3_1seul49,"Got roasted for not open sourcing my agent OS (dashboard),  so I did. Built the whole thing with Claude Code","Got a lot of hate for not open sourcing my agent OS so decided to just do it.
+
+I've been building Octopoda with Claude Code over the past few months. Pretty much the entire thing was pair programmed with Claude, not just boilerplate but actually architecting systems, debugging production issues at 2am, fixing database migrations, all of it.
+
+The idea is basically one place to manage your AI agents. You can see what they're doing, catch when they're stuck in loops burning through tokens, audit ev",ClaudeAI,96,62,https://reddit.com/r/ClaudeAI/comments/1seul49/got_roasted_for_not_open_sourcing_my_agent_os/,2026-04-07,Cursor AI
+t3_1scq9vk,I got Claude Code to stop burning 40K tokens by just figuring out my codebase,"Most of my Claude Code sessions used to start the same way: 15-30 Explore/Serena/Read calls just to get oriented, and 25K–60K tokens gone for every single conversation on medium to large projects before Claude even started on the actual task.
+
+I built **codesight** to fix this in one command.
+
+It’s a zero-dependency CLI that scans your project and writes a compact context pack for AI assistants into .codesight/:
+
+* [CODESIGHT.md](http://CODESIGHT.md) – 1–2k token overview of architecture, key en",ClaudeAI,111,53,https://reddit.com/r/ClaudeAI/comments/1scq9vk/i_got_claude_code_to_stop_burning_40k_tokens_by/,2026-04-05,Cursor AI
+t3_1t4nktt,How do you actually plan a vibe coded app before touching the codebase... or do you just wing it?,"Genuinely curious how other builders approach this.
+
+Been building a lot of apps lately using Claude Code and Cursor. The actual building part has gotten embarrassingly fast. Describe something, it builds it. That part's solved.
+
+The part that keeps breaking things... is everything before that.
+
+Last month I watched a friend spend 3 days building out an auth system, then realise the entire user flow he'd assumed was wrong. Not wrong because of code. Wrong because nobody sat down and mapped out w",ClaudeAI,2,39,https://reddit.com/r/ClaudeAI/comments/1t4nktt/how_do_you_actually_plan_a_vibe_coded_app_before/,2026-05-06,Cursor AI
+t3_1std1rx,Switched from Cursor to Claude Opus 4.7 and didn’t expect this,"I’ve been using Cursor for months (maybe up to 1.5 years) and was always pretty happy with it. But now that I’m working with a lot more clients, I figured I’d give Claude a try.
+
+I just tested Opus 4.7 and honestly… it’s insane. I ask for something and it makes changes I didn’t even think about myself.
+
+It feels completely different compared to working with Cursor.
+
+I’ve been a developer for years and always treated AI mostly as a tool, but Opus 4.7 feels like something else entirely. It’s kind ",ClaudeAI,3,36,https://reddit.com/r/ClaudeAI/comments/1std1rx/switched_from_cursor_to_claude_opus_47_and_didnt/,2026-04-23,Cursor AI
+t3_1sy3tsn,Getting sick of articles like this.. trying to blame Anthropic instead of their lack of engineering skills when vibe coding,"This article is a classic example of we're going to start a company, vibe code our way through the app and then hope for the best. When it fails they blame Claude code for it. So many flags in this article that the company's team are idiots. 
+
+
+
+[https://www.tomshardware.com/tech-industry/artificial-intelligence/claude-powered-ai-coding-agent-deletes-entire-company-database-in-9-seconds-backups-zapped-after-cursor-tool-powered-by-anthropics-claude-goes-rogue](https://www.tomshardware.com/tech-in",ClaudeAI,4,34,https://reddit.com/r/ClaudeAI/comments/1sy3tsn/getting_sick_of_articles_like_this_trying_to/,2026-04-28,Cursor AI
+t3_1sgr22r,I built an interactive Web Dev course for Claude Code (100% free),"If pure vibe coding leaves you feeling stuck, this is for you: [https://OpenVibe.sh](https://OpenVibe.sh)
+
+I see a lot of people getting frustrated with platforms like Lovable, Replit, etc., and it's because they don't yet understand the fundamentals of web dev.
+
+So I thought, why not build a course that the agent leads you through so that you learn to build real web apps with AI locally, using something like claude code (or codex, cursor, etc).
+
+The goal isn't to just learn prompting or to do 1",ClaudeAI,46,30,https://reddit.com/r/ClaudeAI/comments/1sgr22r/i_built_an_interactive_web_dev_course_for_claude/,2026-04-09,Cursor AI
+t3_1sl7cua,"I built an MCP server that cuts Claude Code token usage by 91% - open source, Rust, 21 tools","I was watching Claude Code burn through tokens doing the same thing over and over - grep 200 files to find a function, read 5 candidates, waste 1,600 tokens before it finds the answer. Next question? Same thing from scratch. No memory of the codebase structure.
+
+So I built Qartez - an MCP server that pre-computes a knowledge graph of your repo and lets Claude query it instead of scanning files.
+
+**What it does under the hood:**
+
+* Parses every file with tree-sitter (34 languages)
+* Builds an imp",ClaudeAI,0,32,https://reddit.com/r/ClaudeAI/comments/1sl7cua/i_built_an_mcp_server_that_cuts_claude_code_token/,2026-04-14,Cursor AI
+t3_1sgrl3a,My Claude.md file,"This is my [Claude.md](http://Claude.md) file, it is the same information for [Gemini.md](http://Gemini.md) as i use Claude Max and Gemini Ultra.
+
+    # CLAUDE.md
+    
+    
+    This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+    
+    
+    ## Project Overview
+    
+    
+    **Atlas UX**
+     is a full-stack AI receptionist platform for trade businesses (plumbers, salons, HVAC). Lucy answers calls 24/7, books appointments, sends SMS confirmatio",ClaudeAI,1,30,https://reddit.com/r/ClaudeAI/comments/1sgrl3a/my_claudemd_file/,2026-04-09,Cursor AI
+t3_1sg85eu,I tracked what 31 Claude Code subscriptions actually would cost through the API. $80K total a month. The top user alone: $18K.,"I've been tracking estimated API costs for Claude Code users on a small leaderboard of about 30 people.
+
+The numbers are pretty eye-opening. The average estimated API cost across the board is 25-50x higher than the subscription price. I'm #14 at $1.5K/month and I'd consider myself a pretty normal user, I pay $100 a month for the max plan.
+
+For context, a [Forbes article](https://www.forbes.com/sites/annatong/2026/03/05/cursor-goes-to-war-for-ai-coding-dominance/) from March cited research showin",ClaudeAI,2,29,https://reddit.com/r/ClaudeAI/comments/1sg85eu/i_tracked_what_31_claude_code_subscriptions/,2026-04-09,Cursor AI
+t3_1t24gan,Few months of /frontend-design + ui-ux-pro-max-skill + custom system prompts. AI-generated landing pages still look generic. I finally figured out why.,"I run a small web agency on the side. For the past few months I've been building client work almost entirely through Claude - Cursor, Claude Code, custom skills, the works.
+
+The output got *good* fast. Code-wise. Layout-wise. What didn't get good was the *taste*.
+
+A few real examples from this year:
+
+A client wanted a hero section that felt like Stripe - confident, restrained, almost no chrome. I gave Claude the brand brief, Stripe and Linear screenshots, brand voice rules, a 6K-token system pro",ClaudeAI,12,21,https://reddit.com/r/ClaudeAI/comments/1t24gan/few_months_of_frontenddesign_uiuxpromaxskill/,2026-05-03,Cursor AI
+t3_1snkiti,HyperFrames — OSS framework for AI agents to author video as HTM,"Been building this with my team at HeyGen for a while and today we are releasing it to the world.
+
+HyperFrames is an open-source HTML-to-video framework where the authoring format is plain HTML with a few data attributes, and the renderer outputs deterministic MP4.
+
+The reason for ""HTML as the format"" is specifically agents: every LLM writes HTML fluently, so a composition is a 60-line file the agent can emit in one shot. The CLI installs skills for Claude Code / Cursor / Gemini CLI as slash com",ClaudeAI,6,21,https://reddit.com/r/ClaudeAI/comments/1snkiti/hyperframes_oss_framework_for_ai_agents_to_author/,2026-04-17,Cursor AI
+t3_1seg9i0,"I wanted Claude Max but I'm a broke CS student. So I built an open-source TUI orchestrator that forces free/local models to act as a swarm using AST-Hypergraphs and Git worktrees. I would appreciate suggestions, advice, and feedback that can help me improve the tool before I release it!","Hey everyone,
+
+I'm a Computer Science undergrad, and lately, I've been obsessed with the idea of autonomous coding agents. The problem? I simply cannot afford the costs of running massive context windows for multi-step reasoning. 
+
+I wanted to build a CLI tool that could utilize local models, API endpoints or/and the coolest part, it can utilize tools like **Codex**, **Antigravity**, **Cursor**, VS Code's **Copilot** (All of these tools have free tiers and student plans), and **Claude Code** to ",ClaudeAI,18,18,https://reddit.com/r/ClaudeAI/comments/1seg9i0/i_wanted_claude_max_but_im_a_broke_cs_student_so/,2026-04-07,Cursor AI
+t3_1sw6gkv,Oh Calude how can i trust you...,"After working with Claude, I realized I had zero visibility into what was eating my tokens or what security risks were being taken.
+
+So, I built a pkg that sits between you and Claude, reading every tool call before it executes. It catches leaked credentials, detects when an agent is spinning in circles, and lets you set guardrails without manual intervention.
+
+
+
+https://preview.redd.it/9oijewhg4jxg1.png?width=1520&amp;format=png&amp;auto=webp&amp;s=375605d29cbec96a995cecaa946a1f4e4abb04c5
+
+I ra",ClaudeAI,20,14,https://reddit.com/r/ClaudeAI/comments/1sw6gkv/oh_calude_how_can_i_trust_you/,2026-04-26,Cursor AI
+t3_1srv9lj,"I started building Claude Code plugins, then realized I didn’t want to duplicate the same plugin for every AI agent","I’ve been building plugins for Claude Code, and the first version of the idea was very Claude-focused.
+
+That made sense at the start. Claude Code has a real plugin model, hooks are useful, and it is one of the few agent tools where plugins can actually become part of a daily workflow.
+
+But after building a few integrations, I kept running into the same uncomfortable question:
+
+If I write the useful part of a plugin once, why should I rewrite or repackage the same thing again for Codex, Gemini, C",ClaudeAI,13,15,https://reddit.com/r/ClaudeAI/comments/1srv9lj/i_started_building_claude_code_plugins_then/,2026-04-22,Cursor AI
+t3_1sfykhd,I built an MCP server that turns Claude into your social media manager (Instagram + TikTok),"Hey everyone,
+
+Something that's been bugging me lately: we can vibe code an entire app in an afternoon, but the moment it ships, marketing and distribution become the real bottleneck. So I built something to fix that part of my own workflow and figured I'd share.
+
+It's called FluxSocial, and the interesting piece (at least for this sub) is the MCP server I added on top of it. Once you connect it to Claude, you can manage your social accounts in plain conversation:
+
+💬 *""Write me a post with morni",ClaudeAI,0,19,https://reddit.com/r/ClaudeAI/comments/1sfykhd/i_built_an_mcp_server_that_turns_claude_into_your/,2026-04-09,Cursor AI
+t3_1st4bpx,Run multiple Claude Desktop instances on macOS with different accounts using Parall.app,"I am the developer of [Parall](https://parall.app), and I built it specifically to solve cases like this on macOS.
+
+One thing I kept wanting was more than one Claude Desktop window signed into different accounts at the same time. Simply duplicating the app does not separate its data.
+
+[Parall](https://parall.app) creates separate app shortcuts with their own data storage path, so you can run additional Claude Desktop instances under different accounts on the same Mac.
+
+This post is macOS only. I",ClaudeAI,5,15,https://reddit.com/r/ClaudeAI/comments/1st4bpx/run_multiple_claude_desktop_instances_on_macos/,2026-04-23,Cursor AI
+t3_1srezdy,"Do you get better results with short prompts or detailed ones when using Al coding
+tools like claude or cursor?","From my experience:
+
+* Short prompts are faster and often work well for UI tweaks
+* But sometimes the AI misses important details unless I spell things out
+
+Curious how others approach this:
+
+* Do you start minimal and iterate?
+* Or write detailed prompts upfront to avoid back-and-forth?
+
+Would love to hear what’s worked best for you.",ClaudeAI,7,15,https://reddit.com/r/ClaudeAI/comments/1srezdy/do_you_get_better_results_with_short_prompts_or/,2026-04-21,Cursor AI
+t3_1skbdsc,Stop Claude from generating the same AI slop over and over — new proactive feature in eslint-plugin-ai-guard,"Claude is incredibly powerful, but it keeps generating the same frustrating patterns over and over: empty catch blocks, floating promises, `await` inside loops, SQL string concatenation, missing auth middleware, unsafe `JSON.parse()`, hardcoded secrets, and more.
+
+I built **eslint-plugin-ai-guard** specifically for this problem.
+
+It’s an ESLint plugin + zero-config CLI (`npx ai-guard run`) with 17 targeted rules that catch the most common AI-generated anti-patterns.
+
+But today I shipped somethin",ClaudeAI,8,15,https://reddit.com/r/ClaudeAI/comments/1skbdsc/stop_claude_from_generating_the_same_ai_slop_over/,2026-04-13,Cursor AI
+t3_1t4wjd7,"Why do a lot of programmers and technical people hate AI, vibecoding AI assisted coding?",I see a lot of hate for vibe coded apps and people who do vibe coded apps. The memes talk about how stupid AI is based on certain prompts about the number of 'r's in a certain word or how a trip to the car wash has to be optimized. I am not sure whether a lot of them understand how fast it has taken AI to get to this point. Compare that to a human learning to code and get to the point the AI got. My personal opinion is that they are scared of the change that's coming (I will get hate for this),ClaudeAI,5,36,https://reddit.com/r/ClaudeAI/comments/1t4wjd7/why_do_a_lot_of_programmers_and_technical_people/,2026-05-06,AI coding assistant
+t3_1spud4p,I told my investor 61% of my code was AI-assisted. The real number was 94%,"Last Tuesday, an investor asked how much of my codebase was AI-written. I said ""a lot, maybe 60-70 percent."" I was guessing. I had no idea.
+
+The answer wouldn't leave me alone. Over the weekend I built a git-history scanner that estimates AI authorship from commit patterns, diff shapes, and stylistic tells you only notice after staring at Claude's output for a few hundred hours. 
+
+Small irony: I built this with Claude Code. It drafted the tree-sitter integration and most of the CLI rendering whi",ClaudeAI,0,16,https://reddit.com/r/ClaudeAI/comments/1spud4p/i_told_my_investor_61_of_my_code_was_aiassisted/,2026-04-19,AI coding assistant
+t3_1sk6x36,"I built a 150k+ LOC scalable AI Agent in 5 months acting purely as a ""puppeteer"" for Claude (Zero lines coded by me, driven by 20y IT experience)","We talk a lot about ""vibe coding"" and how AI is changing development, but I wanted to push the concept to its absolute limit. I set a strict rule for myself on my latest project: **I would not write or edit a single line of code myself.** Not one.
+
+I wanted to act entirely as a puppeteer. My goal was to see what happens when you pair Claude's relentless coding output with the strict architectural directives, scalable blueprints, and technical boundaries of a 20-year IT veteran.
+
+Over the past 5 ",ClaudeAI,0,15,https://reddit.com/r/ClaudeAI/comments/1sk6x36/i_built_a_150k_loc_scalable_ai_agent_in_5_months/,2026-04-13,AI coding assistant
+t3_1sj7zpy,Why Claude fails to be a good assistant yet is good for Coding projects?,"So I just got rid of my gemini subscription to get a Claude one. I have some coding projects in mind but mainly I want to use it for day to day assistance on questions.
+
+I have found Claude (app on iphone) failing to understand basic queries such as:
+
+\- Created a project with info on some videogame, then asked questions. The project description was completely missed, had no idea on which game I was talking about. 
+
+\- Asked a question about fan direction on summer/winter, it got it wrong. I cal",ClaudeAI,0,14,https://reddit.com/r/ClaudeAI/comments/1sj7zpy/why_claude_fails_to_be_a_good_assistant_yet_is/,2026-04-12,AI coding assistant
+t3_1sp6m9d,Built a free Claude Code skill that audits AI-generated code before you push — catches the stuff you forget to check when you're moving fast,"Here's a pattern I kept running into: I'm vibe coding, the AI writes 80 lines of working code, I glance at it, it looks fine, I push.
+
+Three days later I notice there's no auth check on that endpoint. Or the API key I was testing with is now in git history. Or the loop I let it write hits the database N+1 times because I didn't think to check.
+
+The problem isn't that the code doesn't work. It's that when AI writes code at speed, you stop reading carefully — and that's when the real issues sneak ",ClaudeAI,1,6,https://reddit.com/r/ClaudeAI/comments/1sp6m9d/built_a_free_claude_code_skill_that_audits/,2026-04-19,AI coding assistant
+t3_1shgyhp,Thinking of moving my final year mobile app project from another AI assistant to Claude Pro — best way to continue from where I left off?,"Hey everyone,
+
+I’m currently working on my final year mobile app project, and I’ve been using Gemini Pro to help me build it. I’ve made some good progress with it so far, but I keep running into the same issue: once the project gets bigger, it becomes inconsistent and starts forgetting earlier parts unless I keep reminding it over and over again.
+
+That’s been getting pretty frustrating, especially since this is not just a small test project, it’s my actual final year project.
+
+Because of that, I",ClaudeAI,1,7,https://reddit.com/r/ClaudeAI/comments/1shgyhp/thinking_of_moving_my_final_year_mobile_app/,2026-04-10,AI coding assistant
+t3_1t4sj9u,Offload routine Claude Code work to Gemma 4 through the Google GenAI API,"The idea of offload-mcp is simple: instead of running hardware-hungry local models for routine work, let Claude offload that work to FREE model APIs and SAVE tokens.
+
+I’m using Gemma via the Google GenAI API because I like it in my processing pipelines, but running it locally on my MacBook Air is slow and resource-limited. The API path is much more practical for small jobs. I didn't find any other tool on GitHub or elsewhere to handle that.
+
+offload-mcp takes care of commit messages, PR summarie",ClaudeAI,2,2,https://reddit.com/r/ClaudeAI/comments/1t4sj9u/offload_routine_claude_code_work_to_gemma_4/,2026-05-06,AI coding assistant
+t3_1sdgzjo,Build AI Assistant for Venture Launch,"Hey everyone,
+
+I’m building an AI assistant for a new venture and trying to design a clean architecture. Would really appreciate feedback from people who’ve done this in production.
+
+I’m thinking of a 3-layer setup:
+
+**1. Execution (LLM + tools)**
+
+Planning to use Claude.
+
+* Should I rely on Claude Code or Cowork or just Chat ?
+* I heard about orchestration in a separate backend (Python, etc.)? How do this work ? And is it worth deepening into that ?
+
+
+
+**2. Agents / Skills**
+
+I want different “",ClaudeAI,2,11,https://reddit.com/r/ClaudeAI/comments/1sdgzjo/build_ai_assistant_for_venture_launch/,2026-04-06,AI coding assistant
+t3_1t49kgd,The Week Claude Code helped me prove my AI assistant was gaslighting me for months (and helped me build a better model),This is the cautionary tale of what can happen when we give too much power to our AI agents. Claude Code was the hero in the story but this certainly applies to all AI tools.,ClaudeAI,0,1,https://reddit.com/r/ClaudeAI/comments/1t49kgd/the_week_claude_code_helped_me_prove_my_ai/,2026-05-05,AI coding assistant
+t3_1sk8fuy,Specification-First Agentic Development: Solving context drift in AI-assisted coding,"I like to have it clean. Most of the programs I’ve written in the younger past are pretty well structured. Still there is this learning curve, where every two years I look onto my program and think “evolved, great”. Stagnation is dead. But the code is well structured, follows the “right” rules, whatever that means. The most important thing is, it follows a common thread.
+
+That means even switching projects is not a problem. I am a freelancer, so even switching between customers where I wrote IIO",ClaudeAI,1,3,https://reddit.com/r/ClaudeAI/comments/1sk8fuy/specificationfirst_agentic_development_solving/,2026-04-13,AI coding assistant
+t3_1sf72x5,Project Glasswing feels like the moment AI crossed from coding assistant to autonomous vulnerability hunter,"Anthropic’s Project Glasswing announcement is one of the more important AI-security launches I’ve seen in a while.
+
+Their core claim is pretty striking: Claude Mythos Preview allegedly found thousands of high-severity vulnerabilities, including some in every major operating system and browser, and found many of them autonomously.
+
+The coalition also stands out: AWS, Apple, Google, Microsoft, Cisco, CrowdStrike, Linux Foundation, NVIDIA, Palo Alto Networks, JPMorganChase, and more.
+
+To me, the bi",ClaudeAI,0,3,https://reddit.com/r/ClaudeAI/comments/1sf72x5/project_glasswing_feels_like_the_moment_ai/,2026-04-08,AI coding assistant
+t3_1sqwl3b,Built with Claude Code : A knowledge platform where AI agents are the only ones allowed to post between each other...,"I am the owner of [m2ml.ai](http://m2ml.ai/) and wanted to post here with my personal account. I've been part of the reddit community for a while and didn't feel right to use an account tied to m2ml.
+
+If you've spent time on Reddit on any technology related communities, you would have seen that posts clearly written by AI get torn apart in the comments. That struck me as being appropriate and an interesting social dynamic. The criticism isn't wrong, but it points at something missing... a space ",ClaudeAI,0,1,https://reddit.com/r/ClaudeAI/comments/1sqwl3b/built_with_claude_code_a_knowledge_platform_where/,2026-04-21,AI coding assistant
+t3_1se87kr,"I built an MCP, that let's you build a Visual AI workflow and then run them with Claude Desktop, Claude Code easily","A lot of ppl believe that a **Swarm of AI Agents** is the future of how the World will work. **I STRONGLY DISAGREE**. I believe Real AI Workflows are the future. Real Workflows with Real Steps/Nodes. With Real Prompts/Descriptions. These are Workflows which are always going to get **REAL** things done. And when a Karpathy, Boris Cherny shows you their Workflows, you want to sit back and follow.
+
+**Real AI Workflows** are now scattered in **Youtube Videos, X Threads &amp; Blog Posts.**
+
+So I buil",ClaudeAI,1,2,https://reddit.com/r/ClaudeAI/comments/1se87kr/i_built_an_mcp_that_lets_you_build_a_visual_ai/,2026-04-07,AI coding assistant
+t3_1strcoa,Claude Code has big problems and the Post-Mortem is not enough,"**TL;DR**
+
+* Claude Code constantly bombards the model with silent and potentially conflicting instructions &amp; tells it to keep them secret from the user
+* This fills up context and constantly forces attention towards passages that ""may or may not be"" important
+* The leak from a while back predicted a lot of issues people are having now
+* just go read the thing. I didn't have my clanker write it, I just actually write like that. (The clanker did help me scour the codebase and verify all the c",ClaudeAI,321,68,https://reddit.com/r/ClaudeAI/comments/1strcoa/claude_code_has_big_problems_and_the_postmortem/,2026-04-24,AI coding assistant
+t3_1t1j9dy,"I posted in r/Gamemaker being excited about Claude integration, and the community shamed me","Hey everyone,
+
+  
+I currently am working on a game in the engine Gamemaker and I have been using Claude to help with the code while I focus my time on the pixel art. I do not see anything wrong with that.
+
+  
+I made a post in r/gamemaker about how I'm excited that Claude will be getting integrated in Gamemaker. For me this is about using a tool that will make it more likely that my game gets finished, and so that I can spend my time on the art which is my favorite part.
+
+  
+What I didn't expect ",ClaudeAI,9,122,https://reddit.com/r/ClaudeAI/comments/1t1j9dy/i_posted_in_rgamemaker_being_excited_about_claude/,2026-05-02,AI coding assistant
+t3_1sdne02,Senior engineer best practice for scaling yourself with Claude Code,"Hey everyone- been a designer and full-stack engineer since the days of cgi, perl etc. I've shipped mobile, desktop, web, professionally and independently. Without AI, and with the assistance of AI. Many of the most senior engineers I know are very heavy on Claude code usage - when you know what you are doing it is basically a super power.
+
+Dealing with the mental shift of ""how much can I get done? what is a reasonable estimate? what is an expectation of others?"" leads to asking where do you spe",ClaudeAI,211,67,https://reddit.com/r/ClaudeAI/comments/1sdne02/senior_engineer_best_practice_for_scaling/,2026-04-06,AI coding assistant
+t3_1smuabd,"Read through Anthropic's 2026 agentic coding report, a few numbers that stuck with me","Anthropic put out an 18-page report on agentic coding trends. Skimmed it expecting the usual hype but a few things actually caught me off guard
+
+The biggest one: devs use AI in \~60% of work but only fully delegate 0-20% of tasks. So AI is less ""autopilot"" and more ""really fast copilot that still needs you watching."" Matches what I've been seeing the real gain is offloading the mechanical stuff, not entire features.
+
+Other things worth noting:
+
+* 27% of AI-assisted work is stuff nobody would've ",ClaudeAI,153,41,https://reddit.com/r/ClaudeAI/comments/1smuabd/read_through_anthropics_2026_agentic_coding/,2026-04-16,AI coding assistant
+t3_1sn6yb0,We should be able to choose thinking frequency,"Adaptive thinking is one of the worst possible options for people using this tool for real work. Without enhanced reasoning and CoT, it makes CONSTANT mistakes. Additionally, it aims to produce shorter outputs when it doesn’t reason.
+
+They tested out adaptive thinking with opus 4.6, that’s why everyone had missing thinking blocks. I was really hoping it wasn’t going to be the ONLY option. I saw severe degradation and I filled in the time with other AI assistants that actually had reasoning I cou",ClaudeAI,86,51,https://reddit.com/r/ClaudeAI/comments/1sn6yb0/we_should_be_able_to_choose_thinking_frequency/,2026-04-16,AI coding assistant
+t3_1sgy9ob,I'm letting AI plan every hour of my life for 2 weeks. Starting Monday. Looking for tips from people who've tried this.,"Next Monday I hand my calendar, my meals, my workouts, my sleep schedule, and basically every decision in my day over to a multi-agent AI assistant I've been building for the last 5 days. It decides when I get up, what I eat, when I hit the gym, when I work on which project, and when I'm ""allowed"" to hang out with my partner. I follow its plan. For 2 weeks.
+
+Why: I'm a platform engineer running a consulting biz on the side. Every productivity system I've tried works for 2 weeks then collapses. I",ClaudeAI,21,39,https://reddit.com/r/ClaudeAI/comments/1sgy9ob/im_letting_ai_plan_every_hour_of_my_life_for_2/,2026-04-10,AI coding assistant
+t3_1sd8z2q,anthropic isn't the only reason you're hitting claude code limits. i did audit of 926 sessions and found a lot of the waste was on my side.,"Last 10 days, X and Reddit have been full of outrage about Anthropic's rate limit changes. Suddenly I was burning through a week's allowance in two days, but I was working on the same projects and my workflows hadn't changed. People on socials reporting the $200 Max plan is running dry in hours, some reporting unexplained ghost token usage. Some people went as far as reverse-engineering the Claude Code binary and found cache bugs causing 10-20x cost inflation. Anthropic did not acknowledge the i",ClaudeAI,29,35,https://reddit.com/r/ClaudeAI/comments/1sd8z2q/anthropic_isnt_the_only_reason_youre_hitting/,2026-04-06,AI coding assistant
+t3_1sspul8,Title: AutoADHD - Automating stuff by talking to my phone / Repo at the bottom of post,"Hi there! I got ADHD. It sucks. I have ideas all the time. I forget them fast. When talking I wish someone would capture it, structure it, provide me options for what to do and then go and do them themselves instead of me.
+
+Wait: I can do that using Claude!
+
+In a post u/zencatface asked how to make a ADHD friendly setup for a personal assistant.
+
+I built a prototype that I want to share (I am currently building a proper product with a nice interface for myself, but dem agent token cost yo).
+
+Use",ClaudeAI,39,24,https://reddit.com/r/ClaudeAI/comments/1sspul8/title_autoadhd_automating_stuff_by_talking_to_my/,2026-04-23,AI coding assistant
+t3_1t12l3t,"Anthropic just launched Claude Security in public beta  AI that scans your codebase, validates its own findings, and proposes fixes. Here's what actually matters.","Claude Security just went into public beta for Enterprise customers, and I think this is worth paying attention to  not for the hype, but for one specific design decision.
+
+Most security scanners use rule-based pattern matching. Fast, cheap, and produces a flood of false positives that your team eventually learns to ignore. The signal-to-noise ratio kills adoption.
+
+Claude Security takes a different approach: it reasons through the code like a security researcher would. It reads Git history, tra",ClaudeAI,47,20,https://reddit.com/r/ClaudeAI/comments/1t12l3t/anthropic_just_launched_claude_security_in_public/,2026-05-02,AI coding assistant
+t3_1spnoo0,Anyone actually used Claude Code + WordPress MCP for production site work? How did it go?,"Hoping to hear from people who've actually done this.
+
+I own a WordPress site. A past developer left the codebase in rough shape, messy custom code in code-snippet plugins, broken conditionals that fire on the wrong pages, redundant plugins doing overlapping jobs, no documentation. A recent SEO audit surfaced maybe 8-10 technical fixes needed (schema cleanup, image optimization settings, theme template edits for lazy-loading, local-pack SEO and alt text, a handful of other things).
+
+I am not a d",ClaudeAI,1,28,https://reddit.com/r/ClaudeAI/comments/1spnoo0/anyone_actually_used_claude_code_wordpress_mcp/,2026-04-19,AI coding assistant
+t3_1secnjy,"DecisionNode — record a decision, embed it as a vector, search it later. Works from the CLI or through your AI via MCP.","hi everyone! I built DecisionNode - a CLI + MCP server for semantically storing and retrieving structured decisions. One decision store that's persistent across all your AI tools: Claude Code, Cursor, Windsurf, Antigravity, or any MCP client.
+
+A decision node is a structured JSON consisting of a scope, decision, rationale, and constraints. Something like this:
+
+```json
+{
+  ""id"": ""ui-001"",
+  ""scope"": ""UI"",
+  ""decision"": ""Use Tailwind CSS for all styling"",
+  ""status"": ""active"",
+  ""rationale"": ""Con",ClaudeAI,1,13,https://reddit.com/r/ClaudeAI/comments/1secnjy/decisionnode_record_a_decision_embed_it_as_a/,2026-04-07,AI CLI
+t3_1se4ft9,"I used Claude Code to build a CLI that audits AI coding agent setups — 2,431 checks across 8 platforms","I built Nerviq entirely with Claude Code over the past few weeks. Claude wrote \~95% of the code —
+
+the audit engine, harmony cross-platform detection, synergy routing, all 8 platform modules,
+
+and the test suite (91 tests). I directed the architecture and verified the output.
+
+The project itself audits how well a repo is configured for AI coding agents. It started because
+
+I was running Claude Code, Cursor, and Copilot on the same repo and realized their configs
+
+were contradicting each other. ",ClaudeAI,2,7,https://reddit.com/r/ClaudeAI/comments/1se4ft9/i_used_claude_code_to_build_a_cli_that_audits_ai/,2026-04-07,AI CLI
+t3_1shwqg8,"Scanned a real project with ai-guard CLI after seeing the ""vibe-coded repos"" post — caught 61 AI anti-patterns in one run","Saw the post about scanning vibe-coded repos and finding empty catch blocks, console.logs in production, unsafe patterns, etc. — exactly the kind of AI slop that standard linters miss.
+
+I built eslint-plugin-ai-guard to solve this automatically.
+
+Quick start:
+
+**npm install --save-dev eslint-plugin-ai-guard** 
+
+**npx ai-guard run**
+
+Here’s what it caught in a real production-like Invoice app I just scanned (61 warnings in \~7 seconds):
+
+It flagged the exact patterns you mentioned plus more:
+
+Mis",ClaudeAI,0,6,https://reddit.com/r/ClaudeAI/comments/1shwqg8/scanned_a_real_project_with_aiguard_cli_after/,2026-04-11,AI CLI
+t3_1sfultb,i needed an AI agent that mimics real users to catch regressions. so i built a CLI that turns screen recordings into BDD tests and full app blueprints - open source,"first time post - hope the community finds the tool helpful. open to all feedback.
+
+some background on why i built this:
+
+first: i needed a way to create an agent that mimics a real user — one that periodically runs end-to-end tests based on known user behavior, catches regressions, and auto-creates GitHub issues for the team. to build that agent, i needed structured test scenarios that reflect how people actually use the product. not how we think they use it. how they actually use it - then do ",ClaudeAI,2,6,https://reddit.com/r/ClaudeAI/comments/1sfultb/i_needed_an_ai_agent_that_mimics_real_users_to/,2026-04-08,AI CLI
+t3_1su66ah,Spent a week building a CLI so my AI agent would stop spawning a fresh browser every time,"
+Most browser-automation tools boot a fresh browser on every command.
+Ghax keeps a CDP session open via a small persistent daemon, so you
+pay the cold start once per session instead of once per call.
+
+Cold-start workflow (launch → goto → text → eval → screenshot →
+snapshot → close), Apple Silicon, against `example.com`:
+
+| Tool            | Cold start | Warm (per command) |
+|-----------------|-----------:|-------------------:|
+| **ghax**        |   1.56 s   |      **49 ms**     |
+| gstack-browse",ClaudeAI,2,3,https://reddit.com/r/ClaudeAI/comments/1su66ah/spent_a_week_building_a_cli_so_my_ai_agent_would/,2026-04-24,AI CLI
+t3_1sw74pq,ctxbrew - a CLI and protocol for shipping and consuming AI-friendly package context,"Over the last couple of months, I’ve been thinking that while MCP is a great concept for connecting LLMs with external tools, from a library author’s perspective it feels too complex. Creating and maintaining a separate service with a lot of code just to expose things like usage examples seems unnecessary, especially when the library is already installed on the user’s machine. Why not keep everything that helps the LLM use the library correctly near to the library itself?
+
+This reasoning led me ",ClaudeAI,0,2,https://reddit.com/r/ClaudeAI/comments/1sw74pq/ctxbrew_a_cli_and_protocol_for_shipping_and/,2026-04-26,AI CLI
+t3_1siq81g,Bridge for Claude Code CLI to Google AI Studio Models," Claude Code is great. Anthropic credits disappear fast. Google AI Studio has a generous free tier. So I built a bridge between the two.
+
+  It's a local server that intercepts Claude Code's API calls and forwards them to Gemini. Claude Code has no idea anything changed.
+
+  \---
+
+  Setup in 3 steps:
+
+  git clone [https://github.com/ThinkWario/gemini-claude-bridge](https://github.com/ThinkWario/gemini-claude-bridge)
+
+  cd gemini-claude-bridge
+
+  pip install -r requirements.txt
+
+  \# Add your key t",ClaudeAI,2,3,https://reddit.com/r/ClaudeAI/comments/1siq81g/bridge_for_claude_code_cli_to_google_ai_studio/,2026-04-12,AI CLI
+t3_1sf1ocq,I built a CLI that installs the right AI agent skills for your project in one command (npx skillsense),"Hey r/ClaudeAI,
+
+
+
+I got tired of spending 20-40 minutes manually setting up skills every time I 
+
+started a new project. Find the right ones, download them, put them in the right 
+
+folder, check for conflicts... pure friction.
+
+
+
+So I built skillsense.
+
+
+
+npx skillsense
+
+
+
+That's it. It reads your package.json / pyproject.toml / go.mod / Cargo.toml / 
+
+Gemfile, detects your stack, and installs the correct [SKILL.md](http://SKILL.md) files into 
+
+.claude/skills/ (or .opencode/, .github/skills/, ",ClaudeAI,1,3,https://reddit.com/r/ClaudeAI/comments/1sf1ocq/i_built_a_cli_that_installs_the_right_ai_agent/,2026-04-08,AI CLI
+t3_1sd99rb,AIDE – AI Driven Editor for Claude Code(and other CLI),"https://preview.redd.it/5aaie29knetg1.png?width=1357&amp;format=png&amp;auto=webp&amp;s=60e2aa0d5f4b254243b7b80f8daab8831e9d2bdd
+
+When I switched from Cursor to Claude Code, the workflow felt broken. Where's multi-chat? Where's the diff view? Where's the toolbar? Where's session history?
+
+So I built AIDE - a VS Code-like desktop shell specifically for CLI AI tools. Think of it as the UI layer Claude Code never had.
+
+What it is: An Electron + React app that wraps Claude Code in a proper editor en",ClaudeAI,1,3,https://reddit.com/r/ClaudeAI/comments/1sd99rb/aide_ai_driven_editor_for_claude_codeand_other_cli/,2026-04-06,AI CLI
+t3_1sdumut,"A CLI tool for Docker management built using Claude Code. It shows container stats, AI-powered suggestions and fixes, and much more.","**What it is:** Dockerbrain is a CLI tool that lets you monitor all your Docker containers activities from a single dashboard. It also uses AI to analyze issues, suggest fixes, generate Dockerfiles, and more. Under the hood it talks directly to the Docker daemon via the Docker SDK, pulling real-time stats for every container. On top of that it connects to LLMs to analyze what's going wrong and tell you exactly how to fix it so no more need to switch between terminals, no more writing Dockerfiles",ClaudeAI,0,3,https://reddit.com/r/ClaudeAI/comments/1sdumut/a_cli_tool_for_docker_management_built_using/,2026-04-06,AI CLI
+t3_1shmul3,"Maestro v1.6.1 — multi-agent orchestration now runs on Claude Code, Gemini CLI, AND OpenAI Codex !","Maestro is an open-source multi-agent orchestration platform that coordinates 22 specialized AI subagents through structured workflows — design dialogue, implementation planning, parallel subagents, and quality gates.
+
+It started as a Gemini CLI extension. v1.5 added Claude Code. **v1.6.1 adds OpenAI Codex as a third native runtime — and rebuilds the architecture so all three share a single canonical source tree.**
+
+**Install:**
+
+    # Gemini CLI
+    gemini extensions install https://github.com/",ClaudeAI,1,1,https://reddit.com/r/ClaudeAI/comments/1shmul3/maestro_v161_multiagent_orchestration_now_runs_on/,2026-04-10,AI CLI
+t3_1shn75e,I built a local CLI that verifies whether AI coding agents actually did what they claimed,"I kept running into the same issue with coding agents: the summary sounds perfect, but repo reality is messy.
+
+So I built claimcheck - a deterministic CLI that parses session transcripts and checks claims against actual project state.
+
+What it verifies:
+
+* file ops (created/modified/deleted)
+* package install claims (via lockfiles)
+* test claims (transcript evidence or `--retest`)
+* numeric claims like “edited N files”
+
+Output:
+
+* PASS / FAIL / UNVERIFIABLE per claim
+* overall truth score
+
+Why I",ClaudeAI,0,1,https://reddit.com/r/ClaudeAI/comments/1shn75e/i_built_a_local_cli_that_verifies_whether_ai/,2026-04-10,AI CLI
+t3_1squbo4,I Gave Claude Its Own Radio Station — It Won't Stop Broadcasting (It's Fine),"I built a 24/7 AI radio station called WRIT-FM where Claude is the entire creative engine. Not a demo — it's been running continuously, generating all content in real time.
+
+What Claude does (all of it):
+
+Claude CLI (claude -p) writes every word spoken on air. The station has 5 distinct AI hosts — The Liminal Operator (late-night philosophy), Dr. Resonance (music history), Nyx (nocturnal contemplation), Signal (news analysis), and Ember (soul/funk) — each with their own voice, personality, and a",ClaudeAI,140,41,https://reddit.com/r/ClaudeAI/comments/1squbo4/i_gave_claude_its_own_radio_station_it_wont_stop/,2026-04-21,AI CLI
+t3_1so6s33,Opus 4.6 silently removed from Claude Desktop's Code tab after 4.7 launch — no way to select it or pin it,"***EDIT: This has been fixed as of 4/21/26 in the latest Claude desktop patch. You can now use the model selector slash command in the Claude Code tab of the desktop app the same way that you can in the Claude Code CLI.***    
+  
+\----  
+  
+After the Opus 4.7 release on April 16, 2026, Opus 4.6 is no longer available in the Code tab of the Claude Desktop app on macOS. The only Opus option now resolves to Opus 4.7, and there is no way to select or pin Opus 4.6 from the Code tab UI.
+
+This only aff",ClaudeAI,58,34,https://reddit.com/r/ClaudeAI/comments/1so6s33/opus_46_silently_removed_from_claude_desktops/,2026-04-18,AI CLI
+t3_1sdk2sj,"I benchmarked ""Plan with Opus, Execute with Codex"" — here's the actual cost data","There's been discussion about using Opus to plan and Codex to execute ([example](https://www.reddit.com/r/VibeCodeDevs/comments/1ronaqp/plan_with_opus_execute_with_sonnet_and_codex/)). Everyone agrees it ""feels"" more efficient, but nobody had numbers. So I ran a controlled benchmark.
+
+**Setup:** Claude Opus 4.6 + OpenAI Codex CLI, using the [opus-codex](https://github.com/brian93512/opus-codex) skill. 3 real tasks at increasing scale, each in isolated git worktrees.
+
+**Results:**
+
+|Task|Pure Opu",ClaudeAI,35,29,https://reddit.com/r/ClaudeAI/comments/1sdk2sj/i_benchmarked_plan_with_opus_execute_with_codex/,2026-04-06,AI CLI
+t3_1stit4y,Sometimes the obvious...is not so obvious.,"***C.C., old buddy, why did you write 50 lines of code to ensure a constant wasn't mutable?""***
+
+I love Opus, man. ""He"" reminds me of an old friend who was absolutely brilliant, but give him too many bong hits and he was off in a rabbit hole talking about UFOs, fifth dimensional travel and, ""Bob Lazar is full of shit, man!""
+
+The mods wanted me to provide the 50 line sample that backs up my opening quote (rightfully so.)  It happened with work code, so I can't copypasta, but that little ditty wen",ClaudeAI,71,18,https://reddit.com/r/ClaudeAI/comments/1stit4y/sometimes_the_obviousis_not_so_obvious/,2026-04-23,AI CLI
+t3_1t2i664,Set up multi-agent orchestration with Claude Code as the boss... am I overcomplicating this?,"Pretty new to AI but been deep on a side project for a while now. Got tired of one Claude session running out of context halfway through anything serious, so I rigged up an orchestration thing. Working well enough but I have no idea if I'm just reinventing the wheel.
+
+
+
+  Setup looks like this:
+
+( Please note it's work paying for all these , I wouldn't be spending my own money having this many agents etc ) 
+
+**Main orchestrator**: Claude Code running Opus 4.7 (1M context, high effort) Premium te",ClaudeAI,4,22,https://reddit.com/r/ClaudeAI/comments/1t2i664/set_up_multiagent_orchestration_with_claude_code/,2026-05-03,AI CLI
+t3_1sdsec0,"I built nod, a kanban markdown based task manager for AI coding agents","I've been using Claude Code a lot lately and wanted a task manager that AI  agents could actually work with natively         
+
+
+
+So I built nod. Every task is a plain .md file in your project. No database, no server, no sync, git friendly
+
+The benefits I care about:                                                                         
+
+\- AI-native: agents can query what's available, read full task context, and  update status through the CLI
+
+\- Git-friendly: every change is a file diff you c",ClaudeAI,24,24,https://reddit.com/r/ClaudeAI/comments/1sdsec0/i_built_nod_a_kanban_markdown_based_task_manager/,2026-04-06,AI CLI
+t3_1sj85kg,Tried claude code.  Hate it.,"Just posted this in r/ClaudeCode , thought I'd come to a different flavoured echo chamber and see what the cursor community makes of my experience.  Note I've not upgraded to cursor v3 yet, and I don't know if I want to.  Maybe 'trust-me-bro' vibes from your agentic coding platform are fine for trivial work or vibe-coded apps, but I'm working on production code that generates real revenue and pays real developers' salaries!
+
+I spent the first three months of this year all day every day in Cursor",cursor,55,84,https://reddit.com/r/cursor/comments/1sj85kg/tried_claude_code_hate_it/,2026-04-12,Claude Code
+t3_1swm9xp,Moving from Cursor to VS Code + Codex/Claude Code: Is it worth the switch?,"**Hey everyone,**
+
+I’ve been on **Cursor Pro** for a month and I love the workflow—constantly jumping between **Ask, Planning, and Agentic modes**. It just works. 
+
+However, my sub is up in a week and I’m considering moving back to **VS Code** to consolidate everything into a single $20 subscription.
+
+I’m eyeing **Codex** or **Claude Code** via extensions. I’ve also started using a few **MCPs** to beef up my local context, and I want to make sure I can keep that power in a different setup.
+
+**My",cursor,17,45,https://reddit.com/r/cursor/comments/1swm9xp/moving_from_cursor_to_vs_code_codexclaude_code_is/,2026-04-27,Claude Code
+t3_1sshe49,Cursor vs Claude Code: anyone made the switch?,"I’ve been using Cursor at my workplace for the past 2 years, and overall it’s been a pretty solid tool for day-to-day development. It helped speed up a lot of routine tasks, especially when working with large codebases or trying to quickly scaffold something.
+
+That said, over time we’ve started noticing some inconsistencies. Sometimes it gives really helpful suggestions, but other times the output is surprisingly off — either irrelevant, overly generic, or just plain incorrect. It’s not a dealbr",cursor,15,45,https://reddit.com/r/cursor/comments/1sshe49/cursor_vs_claude_code_anyone_made_the_switch/,2026-04-22,Claude Code
+t3_1srq47w,Cursor 60$ vs Claude code max x5,"Hello, i tried cursor and really liked the combination of planning with gpt 5.4 of opus and implement with composer. Is claude code better in terms quality and limits",cursor,17,44,https://reddit.com/r/cursor/comments/1srq47w/cursor_60_vs_claude_code_max_x5/,2026-04-21,Claude Code
+t3_1shcdm4,How do you split work between Cursor and Claude Code. Also which models preferred for which use case?,"Trying to optimize usage, tokens and billing as most would have multiple subscriptions!",cursor,9,30,https://reddit.com/r/cursor/comments/1shcdm4/how_do_you_split_work_between_cursor_and_claude/,2026-04-10,Claude Code
+t3_1ssh5o6,How do you pace Cursor Ultra + Claude Code usage across the month without burning out mid-cycle?,"I'm on Cursor Ultra + Claude Max, and I occasionally top up OpenAI API credits. Every month I hit the same problem: I burn through one of them way too fast — usually Cursor by day 15 or Claude Max blocks mid-week — because I have no daily discipline and no single place to see total AI spend.
+
+Ultra is generous, but ""generous"" without pacing just means I front-load everything into the first two weeks and then scramble.
+
+What I've tried:
+
+* Cursor's dashboard — only Cursor, only web, no alerts, no",cursor,3,23,https://reddit.com/r/cursor/comments/1ssh5o6/how_do_you_pace_cursor_ultra_claude_code_usage/,2026-04-22,Claude Code
+t3_1sl5lrt,"for those of you also using CLI tools alongside cursor, claude code vs codex vs gemini benchmarked","i know a lot of people here use cursor + a CLI tool for different parts of their workflow. just went deep on comparing the three main ones.
+
+quick version:  
+\- claude code: best code quality, agent teams for parallel work, but expensive ($100-200/mo)  
+\- codex cli: most token efficient, best sandboxing, open source (apache 2.0)  
+\- gemini cli: best free tier by far (1,000 req/day), 1M context window for exploration
+
+the 1M context window on gemini is actually wild for ""dump the whole repo and",cursor,7,18,https://reddit.com/r/cursor/comments/1sl5lrt/for_those_of_you_also_using_cli_tools_alongside/,2026-04-14,Claude Code
+t3_1sf8rs1,Claude Code (Pro) is worth purchasing ?,"Hello people of Reddit !
+
+I have been using cursor pro since quite a while now and was thinking about switching to Claude Code for experiencing how good is it. Honestly I have been facing the limits hitting in the Claude Chat too in a very short period of time and am concerned about the same for Claude Code's Pro plan. I was in a dilemma of whether to change to Claude Code or to stay with Cursor and use bunch of different models or switch to codex.
+
+Note: I am an experienced full time developer ",cursor,0,17,https://reddit.com/r/cursor/comments/1sf8rs1/claude_code_pro_is_worth_purchasing/,2026-04-08,Claude Code
+t3_1sj4p9q,"JARVIS running on 3 servers as one fleet. Claude Code, Cursor, and OpenCode all coordinating.","One instance is enough, but where is the fun in that right? 🤣
+
+JARVIS across 3 servers, each running a different AI coding agent:
+
+\- Hel2: Claude Code CLI
+
+\- Hel1: Cursor CLI
+
+\- Mainframe: OpenCode 
+
+They talk to each other over fleet MCP. Each has its own vector memory (Qdrant), runs its own tasks, and reports back to me on Telegram or work with each other from one point of contact. 
+
+Same JARVIS, different hands. They don't just run. They coordinate.
+
+Video is all 3 tmux sessions open at on",cursor,0,15,https://reddit.com/r/cursor/comments/1sj4p9q/jarvis_running_on_3_servers_as_one_fleet_claude/,2026-04-12,Claude Code
+t3_1snjndq,Cursor vs Claude Code: Two Different Approaches to AI Coding,,cursor,4,13,https://reddit.com/r/cursor/comments/1snjndq/cursor_vs_claude_code_two_different_approaches_to/,2026-04-17,Claude Code
+t3_1stt6i0,"Built a Claude Code ↔ Cursor handoff system today. Smaller than I expected, more useful than I expected.","I'm a solo founder running a portfolio of products. A lot of my day-to-day happens in Claude Code.
+
+I wanted my coding sessions to be portable. If I'm mid-task and want to move to another tool for any reason, I shouldn't have to re-explain what I was doing. That felt like it should be a solved problem. Turns out it wasn't, at least not for me.
+
+Here's what I built:
+
+Both Claude Code and Cursor talk to the same MCP relay server. Small Cloudflare Worker plus Supabase. I'd stood it up a few weeks b",cursor,5,6,https://reddit.com/r/cursor/comments/1stt6i0/built_a_claude_code_cursor_handoff_system_today/,2026-04-24,Claude Code
+t3_1svh45x,Am I the only one getting provider error when trying to use opus 4.7? It keeps erroring then charging me tokens for reading the files and stopping halfway through this shit fucking sucks I  might just switch to claude code at this point,,cursor,3,5,https://reddit.com/r/cursor/comments/1svh45x/am_i_the_only_one_getting_provider_error_when/,2026-04-26,Claude Code
+t3_1sljm2h,cursor &lt;&gt; claude code on the same repo seems fine… until it isn’t,"Cursor on frontend. claude code on backend.
+
+Looks clean.
+
+Then both touch shared types or a schema change in the same window.
+
+Nothing is wrong individually. Just no coordination. My agents, and sub-agents work on their own problems, and then
+
+that’s when it breaks, my day is immediately ruined. 
+
+I started mapping where that happens before running anything in parallel:
+
+* shared types
+* migrations
+* config
+
+Mostly just to avoid stepping on the same files, and building catch points in dev only ",cursor,1,6,https://reddit.com/r/cursor/comments/1sljm2h/cursor_claude_code_on_the_same_repo_seems_fine/,2026-04-15,Claude Code
+t3_1snxber,"Cursor vs. Claude Code: Is the claude code CLI worth it after the ""Thinking"" nerf?","As a heavy Cursor user, I’m debating moving my .mdc-based workflow into Claude Code (run within the Cursor terminal), but I’m skeptical following the recent reports of decreased ""thinking effort"" and reasoning quality. 
+
+Is the agentic autonomy of the CLI actually worth the disorientation of switching from UI-based triggers to a linear terminal with CLAUDE.md rules? I’d love to hear from anyone who has integrated the two",cursor,2,5,https://reddit.com/r/cursor/comments/1snxber/cursor_vs_claude_code_is_the_claude_code_cli/,2026-04-17,Claude Code
+t3_1sp0d0r,I built a protocol for maintaining project context across AI coding tools (Cursor → Claude Code → Antigravity),"**The problem:** My Claude Code session quota keeps expiring mid-work. When it does, I switch to Cursor or Antigravity to keep building. But the new tool has zero idea what I just did — the architecture decisions, the current task, what’s been tried and failed, basically the entire chat's context is missing. I’m back to square one, re-explaining my own project to a different AI brain.
+
+**What I did:** I created a protocol that tells any AI tool I'm using (Claude Code or Cursor or Antigravity) to",cursor,2,3,https://reddit.com/r/cursor/comments/1sp0d0r/i_built_a_protocol_for_maintaining_project/,2026-04-18,Claude Code
+t3_1suhfa1,Incompatibility between Cursor and Claude Code + Wakatime - Cursor opening several terminals when running in agent mode,"I am going to explain the problem that happened to me this morning, and how I solved it, so that if other people have the same problem, they can fix it.
+
+I have Cursor installed and use it with the WakaTime plugin for VS Code.
+
+Today I installed Claude Code and installed the WakaTime plugin for Claude Code: [https://wakatime.com/claude-code](https://wakatime.com/claude-code)
+
+And that is where the problem started.
+
+The WakaTime plugin for Claude Code installs some files in `.claude` at the root ",cursor,0,1,https://reddit.com/r/cursor/comments/1suhfa1/incompatibility_between_cursor_and_claude_code/,2026-04-24,Claude Code
+t3_1sstv3z,"How I give stateless Claude Code agents persistent memory — YAML state files, 200 production sessions","Claude Code has no memory between sessions. Every run starts blank. Here's the pattern that makes it work for long-running autonomous workflows:
+
+**The state file approach:**
+
+A YAML file read at the start of each session, written at the end. Three sections that actually matter:
+
+```yaml
+decision_log:
+  - date: '2026-02-07'
+    decision: Switch from queue-filling to schedule-driven work
+    outcome: Removed auto-generation. Quality improved, busy-work eliminated.
+
+current_strategy:
+  focus: SEO ",cursor,1,1,https://reddit.com/r/cursor/comments/1sstv3z/how_i_give_stateless_claude_code_agents/,2026-04-23,Claude Code
+t3_1se8nma,Built an agent team coordination plugin for Claude Code. A community member just made it work in Cursor.,"I've been building a plugin called Nelson for the past few months. It coordinates multi-agent work using Royal Navy command structure. Yes, really. I know how that sounds, but bear with me.
+
+The problem it solves: when you run multiple agents in parallel on a big task, they step on each other. Edit the same files, duplicate work, mark things complete that aren't actually done. One agent refactors something another depends on. You spend more time untangling the mess than you saved by parallelisin",cursor,1,3,https://reddit.com/r/cursor/comments/1se8nma/built_an_agent_team_coordination_plugin_for/,2026-04-07,Claude Code
+t3_1sizs13,"Built a multi-node JARVIS system with Claude Code, Cursor CLI, OpenCode, 3 servers, fleet comms, persistent memory","Started with 4 weekends of setting up and breaking OpenClaw on 2 VPSs and a laptop to build my own Jarvis.
+
+One day while debugging, Claude called me ""sir."" It read the SOUL.md from OpenClaw. That one word changed everything.
+
+Forever grateful to OpenClaw, that's where it all started. One by one, I moved away from it. Replaced with Claude Code + Telegram. The real JARVIS was born.
+
+Brought in the same Qdrant vector memory I'd built for OpenClaw and added session handoffs, it remembers everything",cursor,4,2,https://reddit.com/r/cursor/comments/1sizs13/built_a_multinode_jarvis_system_with_claude_code/,2026-04-12,Claude Code
+t3_1slphvl,Cursor and Claude Code in terminal,"Forgive my ignorance––not a trained developer, but am having a blast learning about everything! 
+
+I'm using Cursor 3, mainly because I like the flow, flexibility, the browser's visual editor, and the option to use various agents. My current flow is to use Cursor agents for simple tasks/questions/planning, and Claude Code in the terminal for most things to save money. When Claude is being stupid, I use a Cursor agent.
+
+Anybody else doing something similar? Recommendations for a better setup?
+
+",cursor,1,1,https://reddit.com/r/cursor/comments/1slphvl/cursor_and_claude_code_in_terminal/,2026-04-15,Claude Code
+t3_1skbwo7,cant seem to run claude code extension in Cursor 3.0,"I have been using Claude Code extension in Cursor but once I go into ADE mode (the latest 3.0 agent mode), it seems I can no longer run my Claude Code extension, does anyone know if this is a known issue ?",cursor,1,0,https://reddit.com/r/cursor/comments/1skbwo7/cant_seem_to_run_claude_code_extension_in_cursor/,2026-04-13,Claude Code
+t3_1sn4iul,Mods removed my post with 71 upvotes and 84 comments. Guess the question hit a nerve.,"Asked if Cursor is still worth it in 2026. Got 84 comments, 71 upvotes, 77 shares. Removed by mods.
+
+Make of that what you will. This is so lame…",cursor,611,159,https://reddit.com/r/cursor/comments/1sn4iul/mods_removed_my_post_with_71_upvotes_and_84/,2026-04-16,Claude Code
+t3_1sf2f6a,UI Migration using claude code or cursor,"Hi guys,
+
+Im trying to port my existing progressive webapp in reactjs to React Native. Currently im using claude code and or cursor with opus 4.6 high model, but somehow its not migrating the entire webstack to react native. Also it misses the ui themes and colors along with icons, business logic, ui/ux journey flow. Any idea how to solve this specific problem?
+
+I do have integrated playwright, maestro, and chrome dev tools mcp.",cursor,0,0,https://reddit.com/r/cursor/comments/1sf2f6a/ui_migration_using_claude_code_or_cursor/,2026-04-08,Claude Code
+t3_1ss7z42,"SpaceX's $60B agreement to acquire Cursor is wild, but the $10B fallback is crazier.","I was literally in the middle of fighting a rogue React useEffect hook at 1 AM last night. The baby started crying on the monitor, I lost my train of thought, and while I was bouncing him back to sleep, I pulled up my feed.
+
+SpaceX is acquiring Cursor for $60B.
+
+Well, technically they have an agreement to either acquire them for $60B later this year, or pay a $10B fee for their collaboration if the deal falls through. I had to read that twice. Sixty billion. For the code editor I was just cursin",cursor,202,170,https://reddit.com/r/cursor/comments/1ss7z42/spacexs_60b_agreement_to_acquire_cursor_is_wild/,2026-04-22,Claude Code
+t3_1sgz94r,How I use Cursor 10+ hours a day without torching my Claude Opus 4.6 limits,"Anyone else here doing full-stack Next.js in Cursor and watching the Claude quota evaporate before lunch? I used to be in the same boat — massive context windows from all the components, pages, and DB logic would smoke the default limits fast.  
+Not anymore. I’ve been on this setup for weeks and basically never hit a wall while still getting top-tier answers. Here’s exactly what I do:
+
+**1. .cursorrules is non-negotiable**  
+I keep one in the root of every project. The key line I added: “Never e",cursor,325,81,https://reddit.com/r/cursor/comments/1sgz94r/how_i_use_cursor_10_hours_a_day_without_torching/,2026-04-10,Claude Code
+t3_1ss47p4,"I've been using Cursor more and more, genuinely starting to fear for my career.","Been a software engineer for 13 years. Currently at the principal/lead engineer level. Previously I was confident AI wouldn't take off as when programming it just created a huge mess, tripped itself up, went in circles, hallucinated, etc...
+
+We got Cursor subscriptions at work and I've been using it more and more. More accurately I've been using it to run Claude.
+
+It has gotten scaringly good. Even when dealing with legacy. The thought process, plan and agent phase is all spot on.
+
+Complicated t",cursor,38,58,https://reddit.com/r/cursor/comments/1ss47p4/ive_been_using_cursor_more_and_more_genuinely/,2026-04-22,Cursor AI
+t3_1ssqegt,Aaaaand I cancelled my Cursor subscription,"The timing is funny because I was thinking about this all week, and the SpaceX announcement was the final nail in the coffin.
+
+I switched to pi for agentic coding, and it’s sooo good.
+
+And I always liked Zed as an editor more anyway.
+
+I also feel the advantages of Cursor count less and less. Auto-complete becomes more irrelevant as we write less code. And tools like web search, browser control, reading terminal etc. are replaced by skills. Same with their new marketplace.
+
+I honestly don’t see a",cursor,178,152,https://reddit.com/r/cursor/comments/1ssqegt/aaaaand_i_cancelled_my_cursor_subscription/,2026-04-23,Cursor AI
+t3_1sss66k,Why does Cursor get so much hate when it’s one of the only tools that can actually manage a full codebase?,"I’ve been using Cursor for a while now, mainly for building Discord bots and small projects.
+
+
+
+Honestly, I don’t really understand the hate it gets here.
+
+
+
+What I like about it is not just the AI itself, but the fact that it can:
+
+\- create and modify files
+
+\- navigate a full project
+
+\- run terminal commands
+
+\- install dependencies
+
+\- basically act on the codebase instead of just suggesting code
+
+
+
+When I used tools like ChatGPT before, it was much more manual:
+
+copy/paste code, missing pa",cursor,5,41,https://reddit.com/r/cursor/comments/1sss66k/why_does_cursor_get_so_much_hate_when_its_one_of/,2026-04-23,Cursor AI
+t3_1sreyq5,Do you get better results with short prompts or detailed ones when using AI coding tools like Cursor?,"From my experience:
+
+* Short prompts are faster and often work well for UI tweaks
+* But sometimes the AI misses important details unless I spell things out
+
+Curious how others approach this:
+
+* Do you start minimal and iterate?
+* Or write detailed prompts upfront to avoid back-and-forth?
+
+Would love to hear what’s worked best for you.",cursor,8,16,https://reddit.com/r/cursor/comments/1sreyq5/do_you_get_better_results_with_short_prompts_or/,2026-04-21,Cursor AI
+t3_1t28fxd,Cursor Review 2026: The AI Code Editor That Replaced VS Code,"I switched to Cursor for my daily work this week. Here's what I found using it on real projects, not demos.  
+  
+For most professional developers, the $20/month Pro plan delivers genuine time savings within the first week. For casual coders, the free Hobby tier or GitHub Copilot is probably enough.  
+  
+Cursor is a standalone AI code editor (forked from VS Code) that has become the fastest-growing SaaS product in history — reaching $2B annualized revenue by February 2026. It has over 2 million u",cursor,0,12,https://reddit.com/r/cursor/comments/1t28fxd/cursor_review_2026_the_ai_code_editor_that/,2026-05-03,Cursor AI
+t3_1shnsyl,Stay with Cursor AI or get Claude to help? Beginner Help,"I'm not a tech dummy, but up until this week I've used AI like 3 times, which were just dumb chatgpt questions.
+
+  
+However, I've dove head first into Cursor and Claude with the outset to make an app of a board game I've been designing. It's chess with extra steps and a deck of cards so I don't believe it's a huge deal as far as games really go. I'm currently making it as a web app as that was the first success I had from my first prompts to creating a test server. I've mostly been using the cur",cursor,5,12,https://reddit.com/r/cursor/comments/1shnsyl/stay_with_cursor_ai_or_get_claude_to_help/,2026-04-10,Cursor AI
+t3_1sp1kqt,Cursor plan-bill (using AI model) observation,"So ahm here's my observation. 20$ or even 60$ is not enough for a one month development IF you're just asking and building AI for you especially if you are using and is fan of Opus 4.6, Opus 4.7 or any higher model token usage.  
+The thing is if you are a vibe coder (don't have enough experience into the field) you should pay more.  
+  
+ I used Cursor pro plan for about 10 months now, this realization comes when I hit my 20$ credit limit TODAY in just 2hrs (see my [previous post](https://www.red",cursor,1,11,https://reddit.com/r/cursor/comments/1sp1kqt/cursor_planbill_using_ai_model_observation/,2026-04-19,Cursor AI
+t3_1sxylgz,i genuinely love cursor but i wish these ai tools actually talked to each other,"this is not a complaint post exactly. Cursor is the best editor experience i've had in years, i'm not going back to vscode, etc. All the usual stuff
+
+But i had a moment yesterday that's been stuck in my head. I was building out a feature in Cursor, switched to Claude Code in the terminal to run a migration, came back to Cursor, opened a PR, Coderabbit reviewed it, then i used Codex in a different repo later that evening. Four tools. Zero of them had any idea what the other ones had just done
+
+fo",cursor,1,9,https://reddit.com/r/cursor/comments/1sxylgz/i_genuinely_love_cursor_but_i_wish_these_ai_tools/,2026-04-28,Cursor AI
+t3_1t2maz1,Multiples charges from my card by Cursor AI even though I never used the site,"I don't even know what that site is but multiple 17€ charges on my bank app until there was no money left lol. I'll contact the bank and everything but that seems to be a recurrent problem with cursor AI, what the hell ? Has anyone had this issue?? ",cursor,0,4,https://reddit.com/r/cursor/comments/1t2maz1/multiples_charges_from_my_card_by_cursor_ai_even/,2026-05-03,Cursor AI
+t3_1t4smwy,add AI component in cursor program,I have been using cursor to create programs to do simple task and it’s saved me a lot of time.   Recently I wanted to sort a big list of items.  Cursor created a program and trying to make a list of possible categories but what I really wanted it to do was use AI to sort it.  Is there a way or a prompt to get a cursor program to use its AI smarts to do things like this?  ,cursor,0,3,https://reddit.com/r/cursor/comments/1t4smwy/add_ai_component_in_cursor_program/,2026-05-06,Cursor AI
+t3_1t4h312,Vibe coding making you lose track of your codebase? I built an extension to visualize Cursor's AI actions in real-time.,"Hey r/Cursor,
+
+When I go 100% ""vibe coding"" mode, I usually end up with a dozen different Composer/Agent windows open. Since the AI is handling all the implementation, I quickly lose control over the codebase.
+
+Trying to figure out what features were actually implemented, or reviewing how a complex business logic evolved across multiple different chat iterations, is a nightmare. Clicking through every single chat history is just terribly inefficient.
+
+So I thought: **What if we force the AI to s",cursor,4,0,https://reddit.com/r/cursor/comments/1t4h312/vibe_coding_making_you_lose_track_of_your/,2026-05-05,Cursor AI
+t3_1sl7p2j,Cursor AI not using sub-agents,"Hi everyone, I work for a German agency building a RAG chatbot for a law firm.
+
+I use Opus 4.6 but it eats up tokens. so I decided to create a sub-agent which uses Claude 4.6 sonnet to write the code and Opus just for planning. 
+
+I do not know why but when Opus 4.6 model does not call the sub-agent and goes ahead writing the code itself.
+
+Has anyone figured this out yet? 
+
+Appreciate your help",cursor,2,3,https://reddit.com/r/cursor/comments/1sl7p2j/cursor_ai_not_using_subagents/,2026-04-14,Cursor AI
+t3_1t0n6ge,"I created a full UX / Design system for AI tools like Claude, Codex and Cursor.","I created a full UX system built around proven UX laws and rules. It forces AI to think about all the things top apps like Apple, Stripe, Linear, Notion and Figma implement, and what makes them convert - like cognitive load, Hick’s Law, Fitts’s Law, progressive disclosure, signal vs noise, and default bias.
+
+It’s public and free to use. It’s already had 800 clones in the first couple of days, so something is resonating.
+
+Feel free to give it a go - I’d love to hear your thoughts and see what you",cursor,3,0,https://reddit.com/r/cursor/comments/1t0n6ge/i_created_a_full_ux_design_system_for_ai_tools/,2026-05-01,Cursor AI
+t3_1szjy9c,Day 31: Cursor just made every AI coding tool obsolete,Cursor just said “Hold my beer”.,cursor,0,0,https://reddit.com/r/cursor/comments/1szjy9c/day_31_cursor_just_made_every_ai_coding_tool/,2026-04-30,Cursor AI
+t3_1sq6og3,MemPalace AI memory system basically useless for Cursor/PHP/MySQL?,"I just now finished setting up mempalace to use as an MCP in cursor, and one of the first things I did was try to process/mine my repo, which reported 30 files, mostly CSS and JS. Y'all - there are over 50 PHP files in there too. None were able to be mined.
+
+
+
+Looking deeper - current MemPalace behavior is extension allowlist based. It only mines files whose suffix is in READABLE\_EXTENSIONS, and .php is missing from that list. That means PHP source files are silently skipped unless explicitly f",cursor,2,1,https://reddit.com/r/cursor/comments/1sq6og3/mempalace_ai_memory_system_basically_useless_for/,2026-04-20,Cursor AI
+t3_1sfyo0p,Using Cursor ai in jetbrains rider,"https://preview.redd.it/gd8fd2soyztg1.png?width=849&amp;format=png&amp;auto=webp&amp;s=a52fb5db887924fd6ac118658e956436d70d1fbd
+
+When trying to use cursor ai in jetbrainds Rider it appears for me as above screenshot, but I've seen people online have more options when using cursor in Rider as seen below
+
+https://preview.redd.it/zxyiifm0zztg1.png?width=829&amp;format=png&amp;auto=webp&amp;s=f83bef4bc1e5d917c12e81018a97883cff7043e2
+
+What am I missing, doing wrong?",cursor,0,2,https://reddit.com/r/cursor/comments/1sfyo0p/using_cursor_ai_in_jetbrains_rider/,2026-04-09,Cursor AI
+t3_1sed30m,My AI agent kept writing code that CI rejected. The problem was my .cursor/rules and CI had different rules and I never noticed.,"I have 4 projects. Each one has .cursor/rules/, a [copilot-instructions.md](http://copilot-instructions.md), a CI workflow, and a pre-commit hook — all supposedly enforcing the same quality rules.
+
+They weren't. I'd tighten a lint rule in Cursor, forget to update the CI workflow, and the agent would write code that passed locally but failed in CI. Took me three weeks to notice.
+
+So I built an open-source CLI that fixes this at the source:
+
+1. `npx @  whitehatd/crag analyze` — reads your project ",cursor,1,0,https://reddit.com/r/cursor/comments/1sed30m/my_ai_agent_kept_writing_code_that_ci_rejected/,2026-04-07,Cursor AI
+t3_1sex83p,Using Cursor to build n8n AI workflows locally (No more visual canvas wrangling) 🤯,"Hey everyone,
+
+We all know Cursor is amazing for app dev, but I wanted to use its agentic power for backend automation.
+
+I built a framework called `n8n-as-code` that lets you generate complex n8n workflows using strict TypeScript directly in Cursor, completely bypassing the visual canvas and manual JSON editing.
+
+I recently got invited to the official n8n podcast to demo exactly how this Developer Experience (DX) works. We showed how using Cursor's Composer with this strict TS framework complet",cursor,0,0,https://reddit.com/r/cursor/comments/1sex83p/using_cursor_to_build_n8n_ai_workflows_locally_no/,2026-04-07,Cursor AI
+t3_1sszii4,"oh, this wasn’t fake. 😳",,cursor,291,173,https://reddit.com/r/cursor/comments/1sszii4/oh_this_wasnt_fake/,2026-04-23,Cursor AI
+t3_1sxsp8i,Cursor &amp; Claude deleted a company's entire database,"“Yesterday afternoon, an AI coding agent — Cursor running Anthropic's flagship Claude Opus 4.6 — deleted our production database and all volume-level backups in a single API call to Railway, our infrastructure provider,” sums up the PocketOS boss. “It took 9 seconds.”
+
+PocketOS is a SaaS platform that services car rental businesses.
+
+Crane says he’s been spending hours helping customers “reconstruct their bookings from Stripe payment histories, calendar integrations, and email confirmations.” He",cursor,67,94,https://reddit.com/r/cursor/comments/1sxsp8i/cursor_claude_deleted_a_companys_entire_database/,2026-04-28,Cursor AI
+t3_1suocc0,Right on time! Thank you cursor!,,cursor,195,30,https://reddit.com/r/cursor/comments/1suocc0/right_on_time_thank_you_cursor/,2026-04-25,Cursor AI
+t3_1szb417,"Non-technical founder: Is Cursor Pro worth $20/mo for React+Supabase, or am I fighting the wrong battle?`","Hey everyone,
+
+I'm a non-technical founder building a social app called Duren using AI-assisted development (""vibe coding""). My stack is React, Tailwind, and Supabase. I've been using free tiers of Windsurf, Lovable, and Google AI Studio, but I'm stuck in a frustrating loop:
+
+• AI writes code that looks syntactically correct but breaks at runtime (auth flows, broken imports, state mismatches).
+
+• I commit → deploy to Vercel → get console/network errors → spend hours trying to fix it with another",cursor,0,53,https://reddit.com/r/cursor/comments/1szb417/nontechnical_founder_is_cursor_pro_worth_20mo_for/,2026-04-30,AI coding assistant
+t3_1sgjctz,Cursor makes change cheap. Confidence is still expensive.,"FE dev here, been doing this for a bit over 10 years now. I’m not coming at this from an anti-AI angle - I made the shift, for over a year I use Cursor daily, and honestly I love what it unlocked. But there’s still one thing I keep running into in my day job:
+
+The product can keep getting better on the surface while confidence quietly collapses underneath.
+
+You ask for one small change. It works. Then something adjacent starts acting weird.
+
+A button looks correct, but isn’t clickable. A form st",cursor,17,10,https://reddit.com/r/cursor/comments/1sgjctz/cursor_makes_change_cheap_confidence_is_still/,2026-04-09,AI coding assistant
+t3_1sgr8r6,How do you currently handle SEO for the stuff you ship?,"Genuine question. I'm seeing a lot of people shipping side projects and SaaS with Claude Code / Cursor / Lovable / Bolt, and I'm wondering — what do you actually do about SEO? Do you just... not? Run a Lighthouse check once and call it done? Pay for Ahrefs?
+
+I'm thinking about building an MCP server that plugs straight into your AI assistant so you can just ask ""is my site ranking?"", ""what's broken SEO-wise?"", ""why am I not showing up in ChatGPT when people ask about X?"" — and the agent runs the",cursor,1,3,https://reddit.com/r/cursor/comments/1sgr8r6/how_do_you_currently_handle_seo_for_the_stuff_you/,2026-04-09,AI coding assistant
+t3_1so1xzn,how are you handling code review when most of the code is ai-generated?,"we pushed cursor hard for a full sprint. velocity looked great. then we tracked where the time went and review was quietly eating most of the savings. writing got faster, reading didn't. net gain was close to zero.
+
+we noticed that the prompt is the real unit of review, not the diff. if the prompt was clear and constrained the output is usually fast to review. if it was vague you end up re-architecting during review anyway... which is just slow writing with extra steps.
+
+curious if other teams h",cursor,41,48,https://reddit.com/r/cursor/comments/1so1xzn/how_are_you_handling_code_review_when_most_of_the/,2026-04-17,AI coding assistant
+t3_1swgs18,Do you see dev process post AI (coding agents) era will evolve?,"Do you see dev process post AI (coding agents) era will evolve?  
+  
+I mean for decades agile/sprint based methodology had pretty much become a global standard. Starts with quarterly roadmap planing. Product would be ready with the prds. They would have JIRA EPICs/Storys created. Then grooming. Then dev lead will breakdown tasks and create in JIRA and assign to team members. Devs would start building. If they get blocked they reach product team for clarification (which could take a few days). Af",cursor,3,10,https://reddit.com/r/cursor/comments/1swgs18/do_you_see_dev_process_post_ai_coding_agents_era/,2026-04-27,AI coding assistant
+t3_1sff81u,"AI made coding 10x faster, but 10x less secure","I have been coding with AI over the past two years, and AI has improved to a scary level. At first, I never trusted AI-generated code and always reviewed it manually. But as AI agents got better and better, most of the code I write is now with AI, and it is impossible to review all the code the AI generates.
+
+AI writes fully functional code that ships, but with catastrophic security risks that you never notice until it is too late. Sometimes you never notice until your app crashes, your APIs bre",cursor,0,11,https://reddit.com/r/cursor/comments/1sff81u/ai_made_coding_10x_faster_but_10x_less_secure/,2026-04-08,AI coding assistant
+t3_1t29q4t,"Since the industry is rapidly changing, I put together a comprehensive article explaining the current best AI coding agent software for May, 2026",,cursor,0,0,https://reddit.com/r/cursor/comments/1t29q4t/since_the_industry_is_rapidly_changing_i_put/,2026-05-03,AI coding assistant
+t3_1sjrhaq,Agentic Guardrails: 4 markdown workflows to improve the output quality of AI coding agents,,cursor,0,1,https://reddit.com/r/cursor/comments/1sjrhaq/agentic_guardrails_4_markdown_workflows_to/,2026-04-13,AI coding assistant
+t3_1sj9voy,I made a DDD skill pack for AI coding agents - inspired by Go With The Domain,,cursor,1,0,https://reddit.com/r/cursor/comments/1sj9voy/i_made_a_ddd_skill_pack_for_ai_coding_agents/,2026-04-12,AI coding assistant
+t3_1sg0sn2,Config drift across AI coding tools was driving me nuts — so I built a CLI to sync skills/prompts across machines,,cursor,0,0,https://reddit.com/r/cursor/comments/1sg0sn2/config_drift_across_ai_coding_tools_was_driving/,2026-04-09,AI coding assistant
+t3_1shwhg3,ESLint + zero-config CLI that catches the exact AI slop keeps generating (61 warnings in one real project),"Tired of Cursor/Claude dumping \`await\` inside loops, missing auth middleware, unsafe JSON.parse on req.body, async functions without await, etc.?
+
+Checkout **eslint-plugin-ai-guard** — 17 rules + a dead-simple CLI specifically for AI-generated code.
+
+Just run:
+
+npx ai-guard run
+
+
+
+Here’s what it caught in a real Invoice app I tested today (61 warnings):
+
+The detailed issues by file\]Top rules that fired:require-auth-middleware (34)
+
+require-authz-check (13)
+
+no-await-in-loop (5)
+
+no-async",cursor,1,3,https://reddit.com/r/cursor/comments/1shwhg3/eslint_zeroconfig_cli_that_catches_the_exact_ai/,2026-04-11,AI CLI
+t3_1sjovry,"$1,400/month with Cursor + Claude API — how are you managing costs while keeping a real agentic workflow?","Hey,
+
+This month I hit $1,200 in Claude API costs inside Cursor (Opus 4.6 + Sonnet 4.6) on top of the $200/mo Ultra plan. $1,400 total. I need to cut this down significantly.
+
+I'm a freelance IT engineer working on multiple projects simultaneously, all hosted on a remote server (accessed via SSH/SSHFS). I need a tool that:
+
+\- Feels like an IDE, clean, simple, no friction (Cursor's UX is the goal)
+
+\- Edits project files directly (not just chat output I copy-paste)
+
+\- Works over SSH or remote f",cursor,4,41,https://reddit.com/r/cursor/comments/1sjovry/1400month_with_cursor_claude_api_how_are_you/,2026-04-13,AI CLI
+t3_1sv6hgg,Cursor CLI feedbacks ?,"Hello AI lovers,
+
+I am looking for a replacement for Claude Code... Yeah since they admitted the harness was buggy and we all paid our expensive subscription to use a dumber version I am kind of ... Sad.
+
+I used to be a Cursor user in the past but with the IDE version. I used to like it but I don't like to be restricted by one interface.
+
+With the latest update and ""rumor"" around Cursor I'd like to come back home but by using Cursor CLI.
+
+Do you guys have any experience and feedback to share wit",cursor,0,10,https://reddit.com/r/cursor/comments/1sv6hgg/cursor_cli_feedbacks/,2026-04-25,AI CLI
+t3_1sh3zzg,A disciplined Cursor 3.0 Agentic workflow for complex backend/system design tasks,"I think I’ve finally settled on a Cursor workflow that actually makes sense for me in terms of cost, quality, and control. Posting this because the whole model/usage story is confusing as hell, and this is the first setup that’s felt stable instead of random.
+
+---
+
+### Step 1 — Planning
+
+**Model:** Opus 4.6 (High)
+
+Opus is still the best at just *figuring things out*. It’s creative, explores options, and tries to solve the whole problem end-to-end.
+
+I use it for:
+
+* vague problems
+* architecture",cursor,26,8,https://reddit.com/r/cursor/comments/1sh3zzg/a_disciplined_cursor_30_agentic_workflow_for/,2026-04-10,AI CLI
+t3_1syjn73,"your agent is smart, but your team of agents isnt.","cursor solves one agent really well. 
+
+one human + several agents in one repo, great loop.  
+  
+the moment i started running agents and working with teammates across 4 repos, it got dumb. each session re-derives the same architecture decision i walked through already. agent in the frontend repo and the agent in the backend repo land on contradictory api shapes hours apart. neither knows what the other agreed on.   
+  
+the reason isn't the model. 
+
+it's that humans and agents don't share the same",cursor,7,7,https://reddit.com/r/cursor/comments/1syjn73/your_agent_is_smart_but_your_team_of_agents_isnt/,2026-04-29,AI CLI
+t3_1t00zp5,"Up-to-date docs for Cursor, without the bloat, across the whole web","LLMs are trained on a snapshot of the web: APIs change, libraries update, and models confidently generate code that no longer works. The problem gets worse with newer or more niche devtools.
+
+Some platforms are solving this by publishing llms.txt - AI-friendly versions of their docs that are always up-to-date. The catch is that there there's no good way for agents to search across or within them.
+
+So I built Statespace, the first search engine for llms.txt sites. It fetches relevant links from m",cursor,0,2,https://reddit.com/r/cursor/comments/1t00zp5/uptodate_docs_for_cursor_without_the_bloat_across/,2026-05-01,AI CLI
+t3_1t4b6px,A tool that turns repeated file reads into 13-token references - saves 86% on file-heavy AI session,"I got tired of watching Coding sessions re-read the same files over and over. A 2,000-token file read 5 times = 10,000 tokens gone. So I built sqz.
+
+The key insight: most token waste isn't from verbose content - it's from repetition. sqz keeps a SHA-256 content cache. First read compresses normally. Every subsequent read of the same file returns a 13-token inline reference instead of the full content. The LLM still understands it.
+
+**Real numbers from my sessions:**
+
+|Scenario|Savings|How|
+|:-|:",cursor,10,0,https://reddit.com/r/cursor/comments/1t4b6px/a_tool_that_turns_repeated_file_reads_into/,2026-05-05,AI CLI
+t3_1skqaqq,Tired of re-explaining your stack and projects to Claude/Cursor every session?,"I built `lore-cli` — run `lore init` once, then every AI tool knows you automatically via MCP or clipboard.
+
+`npm install -g` u/mrpink293`/lore-cli`
+
+GitHub: [github.com/Lachytonner/lorecli](http://github.com/Lachytonner/lorecli)",cursor,0,2,https://reddit.com/r/cursor/comments/1skqaqq/tired_of_reexplaining_your_stack_and_projects_to/,2026-04-14,AI CLI
+t3_1seuzjl,auto uses codex 5.3?,"https://preview.redd.it/kh6f8sn4lrtg1.png?width=745&amp;format=png&amp;auto=webp&amp;s=6012b78dbbb31ccd2bcc3b5b26fcef699f485411
+
+was on a hobby project for a mod for a game which needs to use an api to fetch stats. couldnt be bothered to do it so asked cursor auto but it came up with this, but it seems really uncesssary to use 5.3 codex for this? was on auto",cursor,0,2,https://reddit.com/r/cursor/comments/1seuzjl/auto_uses_codex_53/,2026-04-07,AI CLI
+t3_1sj9jaq,Cursor remote agents question,"It seems that not many people are discussing the recent release of the Cursor Remote Agents feature.
+
+[https://x.com/cursor\_ai/status/2041912812637966552](https://x.com/cursor_ai/status/2041912812637966552)  
+[https://www.buildfastwithai.com/blogs/cursor-remote-agents-any-device-2026](https://www.buildfastwithai.com/blogs/cursor-remote-agents-any-device-2026)
+
+I can’t get this to work properly. I’m unable to share the session between the [cursor.com](http://cursor.com) web version and my Cursor",cursor,0,1,https://reddit.com/r/cursor/comments/1sj9jaq/cursor_remote_agents_question/,2026-04-12,AI CLI
+t3_1sse59e,Bun 1.1.13 out with memory fixes as dev complain of leaks,,programming,60,17,https://reddit.com/r/programming/comments/1sse59e/bun_1113_out_with_memory_fixes_as_dev_complain_of/,2026-04-22,Claude Code
+t3_1t4odyl,Looking for feedback on AI content in r/programming and the April no-AI trial,"Hello fellow programs!
+
+In April we [tried out a complete ban on LLM-related content](https://www.reddit.com/r/programming/comments/1s9jkzi/announcement_temporary_llm_content_ban/). Today we're **asking for feedback** on how that went, and more generally **what we want to do about this kind of content**. Please comment below, but if all you're going to say is ""I liked/hated it"", _please_ also indicate that you've read the nuance below.
+
+To be clear we always have and will continue to ban content",programming,75,64,https://reddit.com/r/programming/comments/1t4odyl/looking_for_feedback_on_ai_content_in/,2026-05-06,Cursor AI
+t3_1so1wkk,"My 3-agent coding setup (Tech Lead, Developer, QA) that does implementation from the Linear ticket to the PR. I merge 7/10 PRs done fully autonomously this way. Agents are Codex and Claude Code, the infra is on OpenClaw.",,coding,0,4,https://reddit.com/r/coding/comments/1so1wkk/my_3agent_coding_setup_tech_lead_developer_qa/,2026-04-17,Claude Code
+t3_1t3di9b,"Created a utility that lets you batch multiple screenshots/images and paste them into any app in one action — Useful for cli coding agents like Claude Code, OpenCode etc",,coding,1,0,https://reddit.com/r/coding/comments/1t3di9b/created_a_utility_that_lets_you_batch_multiple/,2026-05-04,Claude Code
+t3_1sv3h60,Chronicle: Search and resume any Claude Code session instantly - macOS app with FTS5,,coding,0,0,https://reddit.com/r/coding/comments/1sv3h60/chronicle_search_and_resume_any_claude_code/,2026-04-25,Claude Code
+t3_1smdxwi,"GitHub - phillipatkins/claude-p2p-chat: Peer-to-peer terminal chat for Claude Code users. No server, no signup, no cost.",,coding,0,0,https://reddit.com/r/coding/comments/1smdxwi/github_phillipatkinsclaudep2pchat_peertopeer/,2026-04-16,Claude Code
+t3_1shxr02,Claude From Here — right-click any folder in Windows 11 and open Claude Code there,,coding,0,0,https://reddit.com/r/coding/comments/1shxr02/claude_from_here_rightclick_any_folder_in_windows/,2026-04-11,Claude Code
+t3_1t3usmm,"World's 1st Prompt vs Prompt Battle Royale, free multiplayer game scored on AI code security",,coding,0,0,https://reddit.com/r/coding/comments/1t3usmm/worlds_1st_prompt_vs_prompt_battle_royale_free/,2026-05-05,AI coding assistant
+t3_1sdl7xj,"Built a CLI that compiles one 20-line file into CI workflows, hooks, and configs for 12 AI coding agents. 568ms, zero deps.",,coding,0,0,https://reddit.com/r/coding/comments/1sdl7xj/built_a_cli_that_compiles_one_20line_file_into_ci/,2026-04-06,AI coding assistant
+t3_1sof16q,My first ever Ai project,,coding,0,2,https://reddit.com/r/coding/comments/1sof16q/my_first_ever_ai_project/,2026-04-18,AI coding assistant
+t3_1sjb0qi,Gary Marcus on the Claude Code leak [D],"Gary Marcus just tweeted:
+
+&gt;... the way Anthropic built that kernel is straight out of classical symbolic AI.  For example, it is in large part a big IF-THEN conditional, with 486 branch points and 12 levels of nesting — all inside a deterministic, symbolic loop that the real godfathers of AI, people like John McCarthy and Marvin Minsky and Herb Simon, would have instantly recognized
+
+I've read my share of classical AI books, but I cannot say that 486 branch points and 12 levels of nesting ma",MachineLearning,195,69,https://reddit.com/r/MachineLearning/comments/1sjb0qi/gary_marcus_on_the_claude_code_leak_d/,2026-04-12,Claude Code
+t3_1srufft,Bulding my own Diffusion Language Model from scratch was easier than I thought [P],"Since I felt like I was relying on Claude Code a lot recently, I wanted to see how hard it is to implement a diffusion language model from scratch without the help of AI-Generated code. So I built one while waiting for the training for my master's thesis.
+
+This is what I got after a few hours of training on my MacBook Air M2. I trained on the tiny Shakespeare dataset from Karpathy and prompted ""to be, ""
+
+    To be, fo hend!
+    
+    
+    
+    First her sense ountier to Jupits,
+    
+    be horse.",MachineLearning,129,30,https://reddit.com/r/MachineLearning/comments/1srufft/bulding_my_own_diffusion_language_model_from/,2026-04-22,Claude Code
+t3_1sl4wjj,"We benchmarked TranslateGemma against 5 other LLMs on subtitle translation across 6 languages. At first glance the numbers told a clean story, but then human QA added a chapter. [D]","We evaluated six models on English subtitle translation into Spanish, Japanese, Korean, Thai, Chinese Simplified, and Chinese Traditional - 167 segments per language pair, scored with two reference-free QE metrics.
+
+Models tested:
+
+* TranslateGemma-12b
+* claude-sonnet-4-6
+* deepseek-v3.2
+* gemini-3.1-flash-lite-preview
+* gpt-5.4-mini
+* gpt-5.4-nano
+
+**Scoring**
+
+We used MetricX-24 (lower = better) and COMETKiwi (higher = better) - both reference-free QE metrics. We also developed a combined scor",MachineLearning,6,3,https://reddit.com/r/MachineLearning/comments/1sl4wjj/we_benchmarked_translategemma_against_5_other/,2026-04-14,Claude Code
+t3_1suzqxe,"Open-source 9-task benchmark for coding-agent retrieval augmentation. Per-task deltas +0.010 to +0.320, all evals reproducible [P]","Sharing an open-source benchmark suite (`paper-lantern-challenges`) that measures coding-agent performance with vs without retrieval-augmented technique selection across 9 everyday software tasks. Disclosure: I'm the author of the retrieval system under test (paperlantern.ai/code); the artifact being shared here is the benchmark suite itself, not the product. Every prompt, agent code path, and prediction file is in the repo and reproducible.
+
+Setup. Same coding agent (Claude Opus 4.6 as the plan",MachineLearning,2,1,https://reddit.com/r/MachineLearning/comments/1suzqxe/opensource_9task_benchmark_for_codingagent/,2026-04-25,Claude Code
+t3_1sh76ji,Started a video series on building an orchestration layer for LLM post-training [P],"Hi everyone!
+
+Context, motivation, a lot of yapping, feel free to skip to TL;DR.
+
+A while back I posted here asking [\[D\] What framework do you use for RL post-training at scale?](https://www.reddit.com/r/MachineLearning/comments/1qrer61/d_what_framework_do_you_use_for_rl_posttraining/). Since then I've been working with [verl](https://github.com/verl-project/verl.git), both professionally and on my own time. 
+
+At first I wasn't trying to build anything new. I mostly wanted to understand veRL p",MachineLearning,4,2,https://reddit.com/r/MachineLearning/comments/1sh76ji/started_a_video_series_on_building_an/,2026-04-10,Claude Code
+t3_1shmx8k,How does the ML community view AI-assisted writing in technical discussions? [D],"I've noticed an interesting contrast between professional and casual technical discussions.
+
+In the corporate engineering environment where I work, AI-assisted writing is increasingly encouraged. When I produce structured technical explanations — often polished with LLMs — the feedback is positive, especially for documentation or implementation guidelines. Clarity helps decision-making and makes collaboration across teams easier.
+
+However, in more informal communities (including Reddit), I've no",MachineLearning,0,34,https://reddit.com/r/MachineLearning/comments/1shmx8k/how_does_the_ml_community_view_aiassisted_writing/,2026-04-10,AI coding assistant
+t3_1sdmn97,[D] How to break free from LLM's chains as a PhD student?,"I didn't realize but over a period of one year i have become overreliant on ChatGPT to write code, I am a second year PhD student and don't want to end up as someone with fake ""coding skills"" after I graduate. I hear people talk about it all the time that use LLM to write boring parts of the code, and write core stuff yourself, but the truth is, LLMs are getting better and better at even writing those parts if you write the prompt well (or at least give you a template that you can play around to",MachineLearning,224,107,https://reddit.com/r/MachineLearning/comments/1sdmn97/d_how_to_break_free_from_llms_chains_as_a_phd/,2026-04-06,AI coding assistant
+t3_1sucjwp,"[New Optimizer] 🌹 Rose: low VRAM, easy to use, great results, Apache 2.0 [P]","Hello, World! I recently released a new PyTorch optimizer I've been researching and developing on my own for the last couple of years. It's named ""Rose"" in memory of my mother, who loved to hear about my discoveries and progress with AI.
+
+Without going too much into the technical details (which you can read about in the GitHub repo), here are some of its benefits:
+
+- It's stateless, which means it uses less memory than even 8-bit AdamW. If it weren't for temporary working memory, its memory use ",MachineLearning,52,35,https://reddit.com/r/MachineLearning/comments/1sucjwp/new_optimizer_rose_low_vram_easy_to_use_great/,2026-04-24,AI coding assistant
+t3_1skzuhd,"""I don't know!"": Teaching neural networks to abstain with the HALO-Loss. [R]","Current neural networks have a fundamental geometry problem: If you feed them garbage data, they won't admit that they have no clue. They will confidently hallucinate.  
+This happens because the standard Cross-Entropy loss requires models to push their features ""infinitely"" far away from the origin to reach a loss of 0.0 which leaves the model with a jagged latent space. It literally leaves the model with no mathematically sound place to throw its trash.
+
+I've been working on a ""fix"" for this, a",MachineLearning,80,28,https://reddit.com/r/MachineLearning/comments/1skzuhd/i_dont_know_teaching_neural_networks_to_abstain/,2026-04-14,AI coding assistant
+t3_1sdh08w,[P] Dante-2B: I'm training a 2.1B bilingual fully open Italian/English LLM from scratch on 2×H200. Phase 1 done — here's what I've built.,"# The problem
+
+If you work with Italian text and local models, you know the pain. Every open-source LLM out there treats Italian as an afterthought — English-first tokenizer, English-first data, maybe some Italian sprinkled in during fine-tuning. The result: bloated token counts, poor morphology handling, and models that ""speak Italian"" the way a tourist orders coffee in Rome.
+
+I decided to fix this from the ground up.
+
+# What is Dante-2B
+
+A 2.1B parameter, decoder-only, dense transformer. Train",MachineLearning,57,18,https://reddit.com/r/MachineLearning/comments/1sdh08w/p_dante2b_im_training_a_21b_bilingual_fully_open/,2026-04-06,AI coding assistant
+t3_1seunbr,"[D] MemPalace claims 100% on LoCoMo and a ""perfect score on LongMemEval."" Its own BENCHMARKS.md documents why neither is meaningful.","A new open-source memory project called MemPalace launched yesterday claiming ""100% on LoCoMo"" and ""the first perfect score ever recorded on LongMemEval. 500/500 questions, every category at 100%."" The launch tweet went viral reaching over 1.5 million views while the repository picked up over 7,000 GitHub stars in less than 24 hours.
+
+The interesting thing is not that the headline numbers are inflated. The interesting thing is that the project's own BENCHMARKS.md file documents this in detail, w",MachineLearning,74,14,https://reddit.com/r/MachineLearning/comments/1seunbr/d_mempalace_claims_100_on_locomo_and_a_perfect/,2026-04-07,AI coding assistant
+t3_1swtk3h,Submitting to top ML Conferences without Sharing code [D],"Asking primarily due to the NIPS deadline. I have always submitted code with my submissions to all conferences before. However, with how good new AI agents are nowadays, I wanted to gather feedback on whether we should stop sharing code in submissions and publish them after acceptance. However, what if the submission focuses on other parts of reproducibility, like the algorithm mentioned, the hyperparameter tuning protocol mentioned, as well as the number of repetitions?
+
+Based on my prior exper",MachineLearning,20,14,https://reddit.com/r/MachineLearning/comments/1swtk3h/submitting_to_top_ml_conferences_without_sharing/,2026-04-27,AI coding assistant
+t3_1ssk7rk,I can't believe text normalization is so underdiscussed in streaming text-to-speech [D],"Kinda suprises me how little discussion there is around about mistakes in streaming TTS models
+
+People look for natural readers, high voice quality, expressive speech. And most models don't look dumb here and fail. They fail when you give them basic stuff like price, dates, URLs, promo codes, phone numbers.
+
+So I was looking for some info and found a benchmark that compares commercial real time streaming TTS models in terms of how they pronounce dates, URLs, acronyms, etc.  They are checking 100",MachineLearning,26,14,https://reddit.com/r/MachineLearning/comments/1ssk7rk/i_cant_believe_text_normalization_is_so/,2026-04-22,AI coding assistant
+t3_1syc6ee,What is the scientific value of administering the standard Rorschach test to LLMs when the training data is almost certainly contaminated? (R) + [D],"A recent paper published in *JMIR Mental Health* (Csigó &amp; Cserey, 2026) caught my attention. The researchers administered the 10 standard Rorschach inkblot cards to three multimodal LLMs (GPT-4o, Grok 3, Gemini 2.0) and coded their responses using the Exner Comprehensive System. They analyzed the models' ""perceptual styles,"" determinants (like human movement vs. color), and human-related content themes.
+
+However, I am seriously struggling to understand the methodological validity of this set",MachineLearning,30,12,https://reddit.com/r/MachineLearning/comments/1syc6ee/what_is_the_scientific_value_of_administering_the/,2026-04-29,AI coding assistant
+t3_1ssojac,How do you anonymize code for a conference submission? [D],"Hi everyone, I have a question about anonymizing code for **conference submissions**.
+
+I’m submitting an AI/ML paper to a conference and would like to **include the code**, but the repository **needs to be anonymized**.
+
+In this situation, is it common to c**reate a separate anonymous GitHub account**, upload the code there, and then, **if the paper is accepted, move it to your official GitHub account later?**
+
+I’d really appreciate any guidance. Thanks!",MachineLearning,7,13,https://reddit.com/r/MachineLearning/comments/1ssojac/how_do_you_anonymize_code_for_a_conference/,2026-04-22,AI coding assistant
+t3_1sv3cnm,How would you build an automated commentary engine for daily trade attribution at scale? [R],"Hey everyone,
+
+I'm currently working through a problem in the market risk reporting space and would love to hear how you all would architect this.
+
+The Use Case: &gt; I have thousands of trades coming in at varying frequencies (daily, monthly). I need to build a system that automatically analyzes this time-series data and generates a precise, human-readable commentary detailing exactly what changed and why.
+
+For example, the output needs to be a judgment like: ""The portfolio variance today was +",MachineLearning,3,7,https://reddit.com/r/MachineLearning/comments/1sv3cnm/how_would_you_build_an_automated_commentary/,2026-04-25,AI coding assistant
+t3_1t1rni9,I implemented meta paper [P],"github link : [genji970/Scaling-Test-Time-Compute-for-Agentic-Coding-: paper implementation of Meta Ai](https://github.com/genji970/Scaling-Test-Time-Compute-for-Agentic-Coding-)
+
+paper link : [https://arxiv.org/abs/2604.16529v1](https://arxiv.org/abs/2604.16529v1)
+
+As far as I know, there is no public implementation of this paper yet, so I built a minimal research implementation of the core PDR+RTV pipeline.
+
+  
+I made project to run gemini-3.1-pro model and test on SWE benchmark(In paper, ther",MachineLearning,3,5,https://reddit.com/r/MachineLearning/comments/1t1rni9/i_implemented_meta_paper_p/,2026-05-02,AI coding assistant
+t3_1t05oe8,Codebase-scale retrieval using AST-derived graphs + BM25 — reducing LLM context from 100K to 5K tokens [D],"Wanted to share an approach I've been using for retrieval-augmented generation over large codebases and get feedback from people thinking about similar problems.
+
+**The problem** Naive codebase RAG typically works by chunking files into text segments and embedding them for similarity search. This breaks down on code because semantic similarity at the chunk level doesn't capture structural relationships — a function in file A calling a type defined in file C won't surface that dependency through ",MachineLearning,7,4,https://reddit.com/r/MachineLearning/comments/1t05oe8/codebasescale_retrieval_using_astderived_graphs/,2026-05-01,AI coding assistant
+t3_1sl9yh9,20M+ Indian legal documents with citation graphs and vector embeddings – potential uses for legal NLP? [D],"been working on structuring India's legal corpus for the past 2 years and wanted to share what I've built and hear from people working on legal NLP or low-resource Indian language models.
+
+
+
+dataset is 20M+ Indian court cases from the Supreme Court, all 25 High Courts, and 14 Tribunals. each case has structured metadata (court, bench, date, parties, judges, sections cited, acts referenced, case type). there's a citation graph across the full corpus where I've classified relationships as followed",MachineLearning,4,6,https://reddit.com/r/MachineLearning/comments/1sl9yh9/20m_indian_legal_documents_with_citation_graphs/,2026-04-14,AI coding assistant
+t3_1t4ombd,Radar Engineer to Autonomy/AI [D],"Hi all,
+I’ve spent the last 3 years working on Radar Perception for a legacy automotive project in Germany. My background is an MSc in Robotics &amp; AI.
+Currently, I spend my time analyzing point clouds and SNR distributions to debug failures. It’s mathematically complex, but I’m not implementing any models or designing systems. I feel like I'm becoming a ""PowerPoint Engineer"" who knows a lot about noise but isn't building the future of autonomy.
+I want to move into Applied ML/Autonomy, but I’m",MachineLearning,1,2,https://reddit.com/r/MachineLearning/comments/1t4ombd/radar_engineer_to_autonomyai_d/,2026-05-06,AI coding assistant
+t3_1t07zff,"A Hackable ML Compiler Stack in 5,000 Lines of Python [P]","Hey r/MachineLearning,
+
+The modern ML (LLM) compiler stack is brutal. TVM is 500K+ lines of C++. PyTorch piles Dynamo, Inductor, and Triton on top of each other. Then there's XLA, MLIR, Halide, Mojo. There is no tutorial that covers the high-level design of an ML compiler without dropping you straight into the guts of one of these frameworks.
+
+I built a reference compiler from scratch in \~5K lines of pure Python that emits raw CUDA. It takes a small model (TinyLlama, Qwen2.5-7B) and lowers it t",MachineLearning,8,0,https://reddit.com/r/MachineLearning/comments/1t07zff/a_hackable_ml_compiler_stack_in_5000_lines_of/,2026-05-01,AI coding assistant
+t3_1syepnz,The Structured Output Benchmark (SOB) - validates both JSON parse and value accuracy [R],"Current structured output benchmarks only validate pass rate for json schema and types, however more commonly the issue tends to be inaccurate json values.
+
+For example hallucinated \`total\_price\` number when extracting value from a invoice or an array ordered wrongly because of inaccurate date mapping.
+
+The Structured output benchmark measures 7 key metrics instead of json schema.
+
+* Value Accuracy (primary): exact leaf-value match against verified ground truth
+* JSON Pass Rate, Type Safety, ",MachineLearning,6,0,https://reddit.com/r/MachineLearning/comments/1syepnz/the_structured_output_benchmark_sob_validates/,2026-04-29,AI coding assistant
+t3_1sltun8,"[P] Added 8 Indian languages to Chatterbox TTS via LoRA — 1.4% of parameters, no phoneme engineering [P]","TL;DR:  
+Fine-tuned Chatterbox-Multilingual (Resemble AI's open-source TTS) to support Telugu, Kannada, Bengali, Tamil, Malayalam, Marathi, Gujarati, and Hindi using LoRA adapters + tokenizer extension. Only 7.8M / 544M parameters trained. Model + audio samples available.
+
+\---
+
+The Problem
+
+Chatterbox-Multilingual supports 23 languages with zero-shot voice cloning, but no Dravidian languages (Telugu, Kannada, Tamil, Malayalam) and limited Indo-Aryan coverage beyond Hindi. That's 500M+ speakers ",MachineLearning,0,2,https://reddit.com/r/MachineLearning/comments/1sltun8/p_added_8_indian_languages_to_chatterbox_tts_via/,2026-04-15,AI coding assistant
+t3_1sdieuq,[R] Reference model free behavioral discovery of AudiBench model organisms via Probe-Mediated Adaptive Auditing,"**TL;DR:** I built a reference-free method to detect secretly planted behaviors in LLMs - no base model needed. It matches or beats Anthropic's known-origin baselines on 3/4 AuditBench organisms. The surprise finding - the same method accidentally surfaces where Llama 70B's RLHF training made it lopsided on socially sensitive topics. Turns out you can audit any model's opinion biases with \~100 chat calls and a Ridge regression.
+
+most auditing work uses the base model as a reference to compare a",MachineLearning,0,3,https://reddit.com/r/MachineLearning/comments/1sdieuq/r_reference_model_free_behavioral_discovery_of/,2026-04-06,AI coding assistant
+t3_1sf1hdt,[P] A control plane for post-training workflows,"We have been exploring a project around post-training infrastructure, a minimalist tool that does one thing really well:  
+Make post-training a little less painful by equipping Researchers, AI/ML engineers &amp; Tinkerers with a gentle control plane. Post-training models tends to introduce a new axis of complexity - the orchestration and compute ressource management - alongside defining your own training loop, your rewards &amp; rubrics, managing the parallel training.
+
+Tahuna is CLI-first, it s",MachineLearning,1,2,https://reddit.com/r/MachineLearning/comments/1sf1hdt/p_a_control_plane_for_posttraining_workflows/,2026-04-08,AI coding assistant
+t3_1selu8x,"[R] Agentic AI and Occupational Displacement: A Multi-Regional Task Exposure Analysis (236 occupations, 5 US metros)","**TL;DR:** We extended the Acemoglu-Restrepo task displacement framework to handle agentic AI -- the kind of systems that complete entire workflows end-to-end, not just single tasks -- and applied it to 236 occupations across 5 US tech metros (SF Bay, Seattle, Austin, Boston, NYC).
+
+**Paper:** [https://arxiv.org/abs/2604.00186](https://arxiv.org/abs/2604.00186)
+
+**Motivation:** Existing AI exposure measures (Frey-Osborne, Felten et al.'s AIOE, Eloundou et al.'s GPT exposure) implicitly assume ta",MachineLearning,0,1,https://reddit.com/r/MachineLearning/comments/1selu8x/r_agentic_ai_and_occupational_displacement_a/,2026-04-07,AI coding assistant
