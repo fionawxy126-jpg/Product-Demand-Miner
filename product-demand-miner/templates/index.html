@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Demand Miner</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Product Demand Miner</h1>
+        <p class="subtitle">从专业社媒挖掘产品对应的用户需求痛点，自动生成产品市场调研报告</p>
+
+        <form id="minerForm">
+            <!-- 产品名称及基础信息 -->
+            <div class="form-row">
+                <div class="form-group" style="flex:0.4">
+                    <label for="product_name">产品名称</label>
+                    <input type="text" id="product_name" name="product_name"
+                           placeholder="例如: ADIT" required>
+                </div>
+                <div class="form-group">
+                    <label for="product_scope">产品涉及领域 <span class="hint">（产品涉及的相关领域和方向）</span></label>
+                    <input type="text" id="product_scope" name="product_scope"
+                           placeholder="例如: AI coding 研发协助">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="product_desc">产品简介 <span class="hint">（一句话描述产品是什么）</span></label>
+                <input type="text" id="product_desc" name="product_desc"
+                       placeholder="例如: 全流程完善AI Coding代码生成和研发协助工具，支持从需求分析、代码生成、提示词记录、项目分析的全流程研发协助">
+            </div>
+
+            <!-- 搜索关键词 -->
+            <div class="form-group">
+                <label for="keywords">爬取关键词 <span class="hint">（输入需要收集的痛点数据在相关领域的关键词）</span></label>
+                <input type="text" id="keywords" name="keywords"
+                       placeholder="例如: Claude Code, Cursor AI, AI coding assistant" required>
+            </div>
+
+            <!-- 数据来源平台 -->
+            <div class="form-group">
+                <label>数据来源平台</label>
+                <div class="platform-row">
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="platforms" value="reddit" checked>
+                        Reddit
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="platforms" value="hackernews">
+                        Hacker News
+                    </label>
+                </div>
+                <div class="other-platform">
+                    <input type="text" id="other_platforms" name="other_platforms"
+                           placeholder="其他平台（如 LinkedIn、Twitter）— 暂不支持自动爬取，仅记录在报告中">
+                </div>
+            </div>
+
+            <!-- 板块选择（动态加载） -->
+            <div class="form-group" id="subredditSection">
+                <label>
+                    搜索板块
+                    <button type="button" id="suggestBtn" class="btn-sm">推荐板块</button>
+                </label>
+                <p class="hint" id="subredditHint">输入关键词后点击"推荐板块"，帮你自动推荐，或手动添加</p>
+                <div class="checkbox-grid" id="subredditGrid"></div>
+                <div class="add-subreddit">
+                    <input type="text" id="customSubreddit" placeholder="手动添加板块（如 Cursor）">
+                    <button type="button" id="addSubBtn" class="btn-sm">添加</button>
+                </div>
+            </div>
+
+            <!-- 时间范围 -->
+            <div class="form-group">
+                <label>时间范围</label>
+                <div class="time-presets">
+                    <label class="radio-item">
+                        <input type="radio" name="time_preset" value="3m">
+                        近 3 个月
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="time_preset" value="6m">
+                        近 6 个月
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="time_preset" value="1y" checked>
+                        近 1 年
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="time_preset" value="custom">
+                        自定义
+                    </label>
+                </div>
+                <div class="form-row hidden" id="customDateRow">
+                    <div class="form-group">
+                        <input type="date" id="time_start" name="time_start">
+                    </div>
+                    <div class="form-group">
+                        <input type="date" id="time_end" name="time_end">
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" id="submitBtn">开始挖掘</button>
+            <span id="spinner" class="spinner hidden"></span>
+        </form>
+
+        <!-- 进度 -->
+        <div id="progress" class="progress-area hidden">
+            <div class="progress-bar-wrap">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <p id="progressText"></p>
+        </div>
+
+        <!-- 结果 -->
+        <div id="result" class="result-area hidden">
+            <h2>挖掘完成</h2>
+            <div id="resultStats"></div>
+            <div class="result-actions">
+                <a id="downloadMd" class="btn" href="#">下载 Markdown</a>
+                <a id="downloadDocx" class="btn btn-secondary" href="#">下载 Word 文档</a>
+                <a id="downloadCsv" class="btn btn-secondary" href="#">下载 CSV</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    const form = document.getElementById('minerForm');
+    const progressDiv = document.getElementById('progress');
+    const progressText = document.getElementById('progressText');
+    const progressBar = document.getElementById('progressBar');
+    const resultDiv = document.getElementById('result');
+    const submitBtn = document.getElementById('submitBtn');
+    const subredditGrid = document.getElementById('subredditGrid');
+
+    // ---- 时间预设 ----
+    const timePresets = document.querySelectorAll('input[name="time_preset"]');
+    const customDateRow = document.getElementById('customDateRow');
+
+    timePresets.forEach(radio => {
+        radio.addEventListener('change', () => {
+            customDateRow.classList.toggle('hidden', radio.value !== 'custom');
+        });
+    });
+
+    function getDates() {
+        const preset = document.querySelector('input[name="time_preset"]:checked').value;
+        const now = new Date();
+        let start, end = '', filter = 'year';
+
+        if (preset === '3m') {
+            start = new Date(now.getFullYear(), now.getMonth() - 3, now.getDate());
+            filter = 'year';
+        } else if (preset === '6m') {
+            start = new Date(now.getFullYear(), now.getMonth() - 6, now.getDate());
+            filter = 'year';
+        } else if (preset === '1y') {
+            start = new Date(now.getFullYear() - 1, now.getMonth(), now.getDate());
+            filter = 'year';
+        } else {
+            start = document.getElementById('time_start').value
+                ? new Date(document.getElementById('time_start').value)
+                : new Date(now.getFullYear() - 1, now.getMonth(), now.getDate());
+            end = document.getElementById('time_end').value || '';
+            filter = 'all';
+        }
+
+        const fmt = d => d.toISOString().split('T')[0];
+        return {
+            time_start: fmt(start),
+            time_end: end,
+            time_filter: filter,
+        };
+    }
+
+    // ---- 板块推荐 ----
+    document.getElementById('suggestBtn').addEventListener('click', async () => {
+        const kw = document.getElementById('keywords').value;
+        if (!kw.trim()) { alert('请先输入关键词'); return; }
+
+        const btn = document.getElementById('suggestBtn');
+        btn.textContent = '搜索中...';
+        btn.disabled = true;
+
+        try {
+            const resp = await fetch('/suggest_subreddits', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({keywords: kw}),
+            });
+            const data = await resp.json();
+
+            subredditGrid.innerHTML = '';
+            if (data.subreddits && data.subreddits.length > 0) {
+                document.getElementById('subredditHint').textContent =
+                    `根据关键词找到 ${data.subreddits.length} 个相关板块，请勾选需要的：`;
+                data.subreddits.forEach(sub => {
+                    const label = document.createElement('label');
+                    label.className = 'checkbox-item';
+                    label.innerHTML = `<input type="checkbox" name="subreddits" value="${sub.name}" checked>
+                        <span>r/${sub.name} <span class="sub-subs">(${(sub.subscribers || 0).toLocaleString()} 成员)</span></span>`;
+                    subredditGrid.appendChild(label);
+                });
+            } else {
+                document.getElementById('subredditHint').textContent = '未找到相关板块，请手动添加';
+            }
+        } catch (err) {
+            alert('推荐失败: ' + err.message);
+        } finally {
+            btn.textContent = '推荐板块';
+            btn.disabled = false;
+        }
+    });
+
+    // ---- 手动添加板块 ----
+    document.getElementById('addSubBtn').addEventListener('click', () => {
+        const input = document.getElementById('customSubreddit');
+        const name = input.value.trim().replace(/^r\//, '');
+        if (!name) return;
+
+        // 检查是否已存在
+        const existing = subredditGrid.querySelectorAll('input[name="subreddits"]');
+        for (const el of existing) {
+            if (el.value.toLowerCase() === name.toLowerCase()) {
+                el.checked = true;
+                input.value = '';
+                return;
+            }
+        }
+
+        const label = document.createElement('label');
+        label.className = 'checkbox-item';
+        label.innerHTML = `<input type="checkbox" name="subreddits" value="${name}" checked>
+            <span>r/${name}</span>`;
+        subredditGrid.appendChild(label);
+        input.value = '';
+    });
+
+    // ---- 提交 ----
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const checked = form.querySelectorAll('input[name="subreddits"]:checked');
+        const subreddits = Array.from(checked).map(el => el.value);
+        if (subreddits.length === 0) {
+            alert('请至少选择一个板块');
+            return;
+        }
+
+        const platforms = Array.from(
+            form.querySelectorAll('input[name="platforms"]:checked')
+        ).map(el => el.value);
+
+        if (platforms.length === 0) {
+            alert('请至少选择一个数据来源平台');
+            return;
+        }
+
+        const dates = getDates();
+
+        const payload = {
+            product_name: document.getElementById('product_name').value,
+            product_desc: document.getElementById('product_desc').value,
+            product_scope: document.getElementById('product_scope').value,
+            keywords: document.getElementById('keywords').value,
+            subreddits: subreddits,
+            time_start: dates.time_start,
+            time_end: dates.time_end,
+            time_filter: dates.time_filter,
+            platforms: platforms,
+            other_platforms: document.getElementById('other_platforms').value,
+        };
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = '正在挖掘';
+        document.getElementById('spinner').classList.remove('hidden');
+        progressDiv.classList.remove('hidden');
+        resultDiv.classList.add('hidden');
+        progressBar.style.width = '0%';
+
+        try {
+            const resp = await fetch('/run', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(payload),
+            });
+            const data = await resp.json();
+            if (data.error) {
+                progressText.textContent = '错误: ' + data.error;
+                submitBtn.disabled = false;
+                submitBtn.textContent = '开始挖掘';
+                document.getElementById('spinner').classList.add('hidden');
+                return;
+            }
+            pollStatus(data.task_id);
+        } catch (err) {
+            progressText.textContent = '请求失败: ' + err.message;
+            submitBtn.disabled = false;
+            submitBtn.textContent = '开始挖掘';
+            document.getElementById('spinner').classList.add('hidden');
+        }
+    });
+
+    function pollStatus(taskId) {
+        const interval = setInterval(async () => {
+            try {
+                const resp = await fetch('/status/' + taskId);
+                const data = await resp.json();
+
+                if (data.progress) {
+                    progressText.textContent = data.progress;
+                    progressBar.style.width = '60%';
+                }
+
+                if (data.status === 'done') {
+                    clearInterval(interval);
+                    progressBar.style.width = '100%';
+                    progressText.textContent = '完成！';
+
+                    const r = data.result;
+                    document.getElementById('resultStats').innerHTML =
+                        `<p>共抓取 <strong>${r.total_posts}</strong> 条帖子，识别出 <strong>${r.pain_count}</strong> 类痛点，<strong>${r.feature_count}</strong> 类期待功能。</p>`;
+
+                    const mdFile = r.md_path.split('/').pop();
+                    const csvFile = r.csv_path.split('/').pop();
+                    const docxFile = r.docx_path.split('/').pop();
+                    document.getElementById('downloadMd').href = '/download/' + mdFile;
+                    document.getElementById('downloadCsv').href = '/download/' + csvFile;
+                    document.getElementById('downloadDocx').href = '/download/' + docxFile;
+
+                    resultDiv.classList.remove('hidden');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = '开始挖掘';
+                    document.getElementById('spinner').classList.add('hidden');
+                    resultDiv.scrollIntoView({behavior: 'smooth'});
+                } else if (data.status === 'error') {
+                    clearInterval(interval);
+                    progressText.textContent = '错误: ' + data.progress;
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = '开始挖掘';
+                    document.getElementById('spinner').classList.add('hidden');
+                }
+            } catch (err) {
+                clearInterval(interval);
+                progressText.textContent = '轮询失败: ' + err.message;
+                submitBtn.disabled = false;
+                submitBtn.textContent = '开始挖掘';
+                document.getElementById('spinner').classList.add('hidden');
+            }
+        }, 2000);
+    }
+    </script>
+</body>
+</html>

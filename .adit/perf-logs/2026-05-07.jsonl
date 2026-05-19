@@ -1,3 +1,0 @@
-{"timestamp":"2026-05-07T07:18:51.223Z","category":"hook","operation":"notification","durationMs":23.52,"success":true}
-{"timestamp":"2026-05-07T07:18:51.247Z","category":"hook","operation":"transcript-upload","durationMs":1.33,"success":true}
-{"timestamp":"2026-05-07T07:18:51.249Z","category":"network","operation":"cloud-auto-sync","durationMs":0.48,"success":false,"error":"Cannot find package '@adit/cloud' imported from /usr/local/lib/node_modules/@varveai/adit-cli/node_modules/@varveai/adit-hooks/dist/handlers/unified.js"}
