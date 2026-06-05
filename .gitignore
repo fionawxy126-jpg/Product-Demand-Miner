@@ -1,1 +1,15 @@
 .adit/
+.DS_Store
+*.sqlite
+output/
+*.zip
+
+# ADIT 工作文件
+reddit_posts.csv
+reddit_posts_v2.csv
+reddit_research.py
+reddit_research_v2.py
+summary.md
+summary_cn.md
+summary_cn_v2.md
+token_transparency_case.md
