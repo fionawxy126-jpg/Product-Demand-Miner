@@ -9,6 +9,8 @@ from docx import Document
 from docx.shared import Pt, Inches, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 
+from .insights import infer_core_issue
+
 
 def _generate_summary(product_name, analysis, product_scope=""):
     """根据分析结果生成简明摘要"""
@@ -36,13 +38,16 @@ def _pain_section(pain_points):
     lines = []
     for i, pp in enumerate(pain_points, 1):
         top = pp["posts"][0]
+        core_issue = pp.get("core_issue") or _infer_core_issue(top)
         lines.append(f"### {i}. {pp['label']}")
         lines.append("")
         lines.append(f"- **帖子**: {top['title']}")
         lines.append(f"  {top['score']} 赞 | {top['num_comments']} 评论 | {top.get('subreddit', '')} | {top['created_utc']}")
         lines.append(f"  链接: {top['url']}")
         lines.append(f"- **相关帖子数量**: {pp['count']} 条")
-        lines.append(f"- **核心问题**: {_infer_core_issue(top)}")
+        lines.append(f"- **核心问题**: {core_issue}")
+        if pp.get("manual_note"):
+            lines.append(f"- **人工备注**: {pp['manual_note']}")
         lines.append("")
 
         if len(pp["posts"]) > 1:
@@ -56,40 +61,7 @@ def _pain_section(pain_points):
 
 def _infer_core_issue(post):
     """从帖子内容推断核心问题描述"""
-    text = (post["title"] + " " + post.get("body", "")[:200]).lower()
-
-    issues = [
-        (["prompt", "instruction", "error on", "misunderstood"],
-         "用户指令不够精确，AI 生成大量代码后发现方向错误，需要推倒重来"),
-        (["billing", "charged", "cost me", "hidden fee", "hermes", "silently"],
-         "存在隐性扣费或计费不透明的问题，用户在不知情的情况下被额外收费"),
-        (["token", "ccusage", "visibility"],
-         "用户无法清晰了解 token 消耗的具体去向和分布，缺乏透明度"),
-        (["pro plan", "paywall", "locked", "no longer", "price"],
-         "产品订阅计划突然变更，核心功能被移到更高价位，用户感到被欺骗"),
-        (["limit", "quota", "rate limit", "allowance", "throttl"],
-         "订阅额度不足以支撑正常使用频率，用户被迫降低使用量或寻找替代方案"),
-        (["loop", "stuck", "infinite", "overnight", "burning", "spiraled"],
-         "AI Agent 进入死循环或失控状态，持续消耗资源无法自行停止"),
-        (["memory", "context", "forget", "claude.md", "amnesia"],
-         "AI 在长会话中遗忘之前约定的上下文或指令，导致行为不一致"),
-        (["hallucinat", "made up", "fabricat", "nonexistent"],
-         "AI 编造不存在的 API、库或事实，导致生成的代码无法运行"),
-        (["data loss", "lost code", "deleted", "destroyed", "wiped", "nuked"],
-         "AI 操作导致用户代码或数据被意外删除或覆盖，造成不可逆损失"),
-        (["slow", "performance", "latency", "hang", "timeout"],
-         "工具响应速度慢或频繁超时，严重影响开发效率"),
-        (["crash", "unstable", "downtime", "outage", "bug"],
-         "工具频繁崩溃或出现稳定性问题，无法可靠地完成工作"),
-        (["privacy", "security", "data safe", "leak", "sensitive"],
-         "用户担心代码和数据的隐私安全，对数据传输和存储方式缺乏信任"),
-    ]
-
-    for keywords, desc in issues:
-        if any(k in text for k in keywords):
-            return desc
-
-    return "用户在使用过程中遇到了影响体验的关键问题"
+    return infer_core_issue(post)
 
 
 def _feature_section(features):
@@ -97,6 +69,9 @@ def _feature_section(features):
     for feat in features:
         lines.append(f"### {feat['label']}")
         lines.append("")
+        if feat.get("manual_note"):
+            lines.append(f"- **人工备注**: {feat['manual_note']}")
+            lines.append("")
         for p in feat["posts"][:3]:
             lines.append(f"- [{p['title']}]({p['url']}) — {p['score']} 赞 | {p.get('subreddit', '')} | {p['created_utc']}")
         lines.append("")
@@ -110,7 +85,7 @@ def _ranking_table(pain_points):
     ]
     for i, pp in enumerate(pain_points, 1):
         top = pp["posts"][0]
-        core = _infer_core_issue(top)
+        core = pp.get("core_issue") or _infer_core_issue(top)
         if len(core) > 40:
             core = core[:40] + "..."
         lines.append(f"| {i} | {pp['label']} | {pp['count']} | {pp['top_score']} | {core} |")
@@ -300,7 +275,12 @@ def generate_docx(product_name, keywords, subreddits, time_range,
 
         p = doc.add_paragraph()
         p.add_run('核心问题: ').bold = True
-        p.add_run(_infer_core_issue(top))
+        p.add_run(pp.get("core_issue") or _infer_core_issue(top))
+
+        if pp.get("manual_note"):
+            p = doc.add_paragraph()
+            p.add_run('人工备注: ').bold = True
+            p.add_run(pp["manual_note"])
 
         if len(pp["posts"]) > 1:
             doc.add_paragraph('其他相关帖子:')
@@ -315,6 +295,10 @@ def generate_docx(product_name, keywords, subreddits, time_range,
     doc.add_heading('二、用户期待的功能', level=1)
     for feat in analysis["features"]:
         doc.add_heading(feat["label"], level=3)
+        if feat.get("manual_note"):
+            p = doc.add_paragraph()
+            p.add_run('人工备注: ').bold = True
+            p.add_run(feat["manual_note"])
         for p in feat["posts"][:3]:
             doc.add_paragraph(
                 f'{p["title"]} — {p["score"]} 赞 | {p.get("subreddit", "")} | {p["created_utc"]}',
@@ -339,7 +323,7 @@ def generate_docx(product_name, keywords, subreddits, time_range,
         row[1].text = pp["label"]
         row[2].text = str(pp["count"])
         row[3].text = str(pp["top_score"])
-        core = _infer_core_issue(pp["posts"][0])
+        core = pp.get("core_issue") or _infer_core_issue(pp["posts"][0])
         row[4].text = core[:60] + '...' if len(core) > 60 else core
 
     # 四、热门帖子 Top 10

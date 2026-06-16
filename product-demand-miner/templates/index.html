@@ -114,6 +114,28 @@
             <p id="progressText"></p>
         </div>
 
+        <!-- AI 复核 -->
+        <div id="review" class="review-area hidden">
+            <div class="review-head">
+                <div>
+                    <h2>AI 复核草稿</h2>
+                    <p id="reviewSummary"></p>
+                </div>
+                <button type="button" id="exportBtn" class="btn">确认导出报告</button>
+            </div>
+            <div id="normalizationStats" class="review-stats"></div>
+
+            <div class="review-section">
+                <h3>痛点复核</h3>
+                <div id="painReviewList" class="review-list"></div>
+            </div>
+
+            <div class="review-section">
+                <h3>期待功能复核</h3>
+                <div id="featureReviewList" class="review-list"></div>
+            </div>
+        </div>
+
         <!-- 结果 -->
         <div id="result" class="result-area hidden">
             <h2>挖掘完成</h2>
@@ -134,6 +156,10 @@
     const resultDiv = document.getElementById('result');
     const submitBtn = document.getElementById('submitBtn');
     const subredditGrid = document.getElementById('subredditGrid');
+    const reviewDiv = document.getElementById('review');
+    const exportBtn = document.getElementById('exportBtn');
+    let currentTaskId = null;
+    let currentReview = null;
 
     // ---- 时间预设 ----
     const timePresets = document.querySelectorAll('input[name="time_preset"]');
@@ -242,19 +268,19 @@
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        const checked = form.querySelectorAll('input[name="subreddits"]:checked');
-        const subreddits = Array.from(checked).map(el => el.value);
-        if (subreddits.length === 0) {
-            alert('请至少选择一个板块');
-            return;
-        }
-
         const platforms = Array.from(
             form.querySelectorAll('input[name="platforms"]:checked')
         ).map(el => el.value);
 
         if (platforms.length === 0) {
             alert('请至少选择一个数据来源平台');
+            return;
+        }
+
+        const checked = form.querySelectorAll('input[name="subreddits"]:checked');
+        const subreddits = Array.from(checked).map(el => el.value);
+        if (platforms.includes('reddit') && subreddits.length === 0) {
+            alert('请至少选择一个 Reddit 板块');
             return;
         }
 
@@ -278,6 +304,9 @@
         document.getElementById('spinner').classList.remove('hidden');
         progressDiv.classList.remove('hidden');
         resultDiv.classList.add('hidden');
+        reviewDiv.classList.add('hidden');
+        currentTaskId = null;
+        currentReview = null;
         progressBar.style.width = '0%';
 
         try {
@@ -294,6 +323,7 @@
                 document.getElementById('spinner').classList.add('hidden');
                 return;
             }
+            currentTaskId = data.task_id;
             pollStatus(data.task_id);
         } catch (err) {
             progressText.textContent = '请求失败: ' + err.message;
@@ -317,24 +347,29 @@
                 if (data.status === 'done') {
                     clearInterval(interval);
                     progressBar.style.width = '100%';
-                    progressText.textContent = '完成！';
+                    progressText.textContent = '报告已生成。';
 
                     const r = data.result;
-                    document.getElementById('resultStats').innerHTML =
-                        `<p>共抓取 <strong>${r.total_posts}</strong> 条帖子，识别出 <strong>${r.pain_count}</strong> 类痛点，<strong>${r.feature_count}</strong> 类期待功能。</p>`;
-
-                    const mdFile = r.md_path.split('/').pop();
-                    const csvFile = r.csv_path.split('/').pop();
-                    const docxFile = r.docx_path.split('/').pop();
-                    document.getElementById('downloadMd').href = '/download/' + mdFile;
-                    document.getElementById('downloadCsv').href = '/download/' + csvFile;
-                    document.getElementById('downloadDocx').href = '/download/' + docxFile;
+                    showDownloads(r);
 
                     resultDiv.classList.remove('hidden');
                     submitBtn.disabled = false;
                     submitBtn.textContent = '开始挖掘';
                     document.getElementById('spinner').classList.add('hidden');
                     resultDiv.scrollIntoView({behavior: 'smooth'});
+                } else if (data.status === 'review_ready') {
+                    clearInterval(interval);
+                    progressBar.style.width = '100%';
+                    progressText.textContent = 'AI 复核完成，请检查修改后导出报告。';
+
+                    currentReview = data.result.review;
+                    renderReview(data.result);
+
+                    reviewDiv.classList.remove('hidden');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = '重新挖掘';
+                    document.getElementById('spinner').classList.add('hidden');
+                    reviewDiv.scrollIntoView({behavior: 'smooth'});
                 } else if (data.status === 'error') {
                     clearInterval(interval);
                     progressText.textContent = '错误: ' + data.progress;
@@ -350,6 +385,166 @@
                 document.getElementById('spinner').classList.add('hidden');
             }
         }, 2000);
+    }
+
+    function escapeHtml(value) {
+        return String(value ?? '').replace(/[&<>"']/g, char => ({
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#39;',
+        }[char]));
+    }
+
+    function renderReview(result) {
+        const review = result.review;
+        const stats = result.normalization || {};
+        const sourceCounts = stats.source_counts || {};
+        const sourceText = Object.keys(sourceCounts).length
+            ? Object.entries(sourceCounts).map(([name, count]) => `${name}: ${count}`).join(' / ')
+            : '暂无来源统计';
+
+        document.getElementById('reviewSummary').innerHTML =
+            `共保留 <strong>${result.total_posts}</strong> 条帖子，识别出 <strong>${result.pain_count}</strong> 类痛点，<strong>${result.feature_count}</strong> 类期待功能。`;
+
+        document.getElementById('normalizationStats').innerHTML =
+            `<span>原始 ${stats.raw_count || 0}</span>
+             <span>保留 ${stats.kept_count || 0}</span>
+             <span>去重 ${stats.duplicate_count || 0}</span>
+             <span>时间过滤 ${stats.date_filtered_count || 0}</span>
+             <span>${escapeHtml(sourceText)}</span>`;
+
+        document.getElementById('painReviewList').innerHTML =
+            review.pain_points.length
+                ? review.pain_points.map(renderPainItem).join('')
+                : '<p class="empty-state">未识别到明确痛点，可调整关键词或扩大时间范围。</p>';
+
+        document.getElementById('featureReviewList').innerHTML =
+            review.features.length
+                ? review.features.map(renderFeatureItem).join('')
+                : '<p class="empty-state">未识别到明确期待功能，可在最终报告中手动补充。</p>';
+    }
+
+    function renderPainItem(item, index) {
+        return `<section class="review-item" data-section="pain_points" data-key="${escapeHtml(item.key)}">
+            <div class="review-item-top">
+                <label class="review-keep">
+                    <input type="checkbox" data-field="keep" ${item.keep ? 'checked' : ''}>
+                    保留
+                </label>
+                <span>${index + 1}. ${escapeHtml(item.count)} 条证据 · 最高 ${escapeHtml(item.top_score)} 赞 · ${escapeHtml(item.total_comments)} 评论</span>
+            </div>
+            <label>痛点标题</label>
+            <input type="text" data-field="label" value="${escapeHtml(item.label)}">
+            <label>核心问题</label>
+            <textarea data-field="core_issue" rows="2">${escapeHtml(item.core_issue)}</textarea>
+            <label>人工备注</label>
+            <textarea data-field="manual_note" rows="2" placeholder="补充你的判断、优先级或需要进入报告的洞察">${escapeHtml(item.manual_note)}</textarea>
+            ${renderReviewNotes(item.review_notes)}
+            ${renderEvidence(item.evidence)}
+        </section>`;
+    }
+
+    function renderFeatureItem(item, index) {
+        return `<section class="review-item" data-section="features" data-key="${escapeHtml(item.key)}">
+            <div class="review-item-top">
+                <label class="review-keep">
+                    <input type="checkbox" data-field="keep" ${item.keep ? 'checked' : ''}>
+                    保留
+                </label>
+                <span>${index + 1}. ${escapeHtml(item.count)} 条证据</span>
+            </div>
+            <label>功能标题</label>
+            <input type="text" data-field="label" value="${escapeHtml(item.label)}">
+            <label>人工备注</label>
+            <textarea data-field="manual_note" rows="2" placeholder="补充你的判断、适用场景或产品建议">${escapeHtml(item.manual_note)}</textarea>
+            ${renderReviewNotes(item.review_notes)}
+            ${renderEvidence(item.evidence)}
+        </section>`;
+    }
+
+    function renderReviewNotes(notes = []) {
+        return `<div class="review-notes">${notes.map(note => `<span>${escapeHtml(note)}</span>`).join('')}</div>`;
+    }
+
+    function renderEvidence(posts = []) {
+        if (!posts.length) return '';
+        return `<div class="evidence-list">
+            ${posts.map(post => `<a href="${escapeHtml(post.url)}" target="_blank" rel="noopener">
+                <strong>${escapeHtml(post.title)}</strong>
+                <span>${escapeHtml(post.source)} · ${escapeHtml(post.subreddit)} · ${escapeHtml(post.score)} 赞 · ${escapeHtml(post.num_comments)} 评论 · ${escapeHtml(post.created_utc)}</span>
+            </a>`).join('')}
+        </div>`;
+    }
+
+    function collectReviewData() {
+        return {
+            ...currentReview,
+            pain_points: collectReviewSection('pain_points'),
+            features: collectReviewSection('features'),
+        };
+    }
+
+    function collectReviewSection(section) {
+        return Array.from(reviewDiv.querySelectorAll(`[data-section="${section}"]`)).map(item => {
+            const data = {
+                key: item.dataset.key,
+                keep: item.querySelector('[data-field="keep"]').checked,
+                label: item.querySelector('[data-field="label"]').value,
+                manual_note: item.querySelector('[data-field="manual_note"]').value,
+            };
+            const coreIssue = item.querySelector('[data-field="core_issue"]');
+            if (coreIssue) data.core_issue = coreIssue.value;
+            return data;
+        });
+    }
+
+    exportBtn.addEventListener('click', async () => {
+        if (!currentTaskId || !currentReview) {
+            alert('请先完成一次挖掘和复核');
+            return;
+        }
+
+        exportBtn.disabled = true;
+        exportBtn.textContent = '正在导出';
+        progressText.textContent = '正在根据复核结果生成报告...';
+        resultDiv.classList.add('hidden');
+
+        try {
+            const resp = await fetch('/export/' + currentTaskId, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({review: collectReviewData()}),
+            });
+            const data = await resp.json();
+            if (data.error) {
+                progressText.textContent = '导出失败: ' + data.error;
+                return;
+            }
+
+            showDownloads(data.result);
+            resultDiv.classList.remove('hidden');
+            progressText.textContent = '报告已生成。';
+            resultDiv.scrollIntoView({behavior: 'smooth'});
+        } catch (err) {
+            progressText.textContent = '导出失败: ' + err.message;
+        } finally {
+            exportBtn.disabled = false;
+            exportBtn.textContent = '确认导出报告';
+        }
+    });
+
+    function showDownloads(r) {
+        document.getElementById('resultStats').innerHTML =
+            `<p>最终报告包含 <strong>${r.total_posts}</strong> 条帖子，保留 <strong>${r.pain_count}</strong> 类痛点，<strong>${r.feature_count}</strong> 类期待功能。</p>`;
+
+        const mdFile = r.md_path.split('/').pop();
+        const csvFile = r.csv_path.split('/').pop();
+        const docxFile = r.docx_path.split('/').pop();
+        document.getElementById('downloadMd').href = '/download/' + mdFile;
+        document.getElementById('downloadCsv').href = '/download/' + csvFile;
+        document.getElementById('downloadDocx').href = '/download/' + docxFile;
     }
     </script>
 </body>
