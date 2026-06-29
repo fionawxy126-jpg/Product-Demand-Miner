@@ -7,145 +7,189 @@
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Product Demand Miner</h1>
-        <p class="subtitle">从专业社媒挖掘产品对应的用户需求痛点，自动生成产品市场调研报告</p>
+    <svg class="filter-defs" aria-hidden="true" focusable="false">
+        <filter id="verticalSmearFilter">
+            <feTurbulence type="fractalNoise" baseFrequency="0.012 0.16" numOctaves="2" seed="7" result="noise"></feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="18" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+        </filter>
+    </svg>
+    <div class="app-shell">
+        <aside class="visual-rail">
+            <div class="workspace-head">
+                <div>
+                    <p class="eyebrow">Product Research Workspace</p>
+                    <h1>Product Demand Miner</h1>
+                    <p class="subtitle">从专业社媒挖掘产品对应的用户需求痛点，自动生成产品市场调研报告</p>
+                </div>
+                <div class="source-badges" aria-hidden="true">
+                    <span>HN</span>
+                    <span>Web</span>
+                    <span>X</span>
+                </div>
+            </div>
 
-        <form id="minerForm">
-            <!-- 产品名称及基础信息 -->
-            <div class="form-row">
-                <div class="form-group" style="flex:0.4">
-                    <label for="product_name">产品名称</label>
-                    <input type="text" id="product_name" name="product_name"
-                           placeholder="例如: AD" required>
+            <div class="pipeline-visual" aria-hidden="true">
+                <div class="data-flow-trail"></div>
+                <section class="pipeline-card vertical-smear-glass data-crawler-card fade-tail-right fade-tail-light">
+                    <h2>Data Crawler</h2>
+                    <div class="pipeline-photo data-photo"></div>
+                </section>
+                <section class="pipeline-card vertical-smear-glass product-report-card fade-tail-right">
+                    <h2>Product Report</h2>
+                    <div class="pipeline-photo report-photo"></div>
+                </section>
+            </div>
+        </aside>
+
+        <main class="workspace-panel">
+            <form id="minerForm">
+                <!-- 产品名称及基础信息 -->
+                <div class="form-row">
+                    <div class="form-group" style="flex:0.4">
+                        <label for="product_name">产品名称</label>
+                        <input type="text" id="product_name" name="product_name"
+                               placeholder="例如: AD" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product_scope">产品涉及领域 <span class="hint">（产品涉及的相关领域和方向）</span></label>
+                        <input type="text" id="product_scope" name="product_scope"
+                               placeholder="例如: Vibe coding 研发协助">
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="product_scope">产品涉及领域 <span class="hint">（产品涉及的相关领域和方向）</span></label>
-                    <input type="text" id="product_scope" name="product_scope"
-                           placeholder="例如: Vibe coding 研发协助">
+                    <label for="product_desc">产品简介 <span class="hint">（一句话描述产品是什么）</span></label>
+                    <input type="text" id="product_desc" name="product_desc"
+                           placeholder="例如: 全流程完善Vibe Coding代码生成和研发协助工具，支持从需求分析、代码生成、提示词记录、项目分析的全流程研发协助">
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="product_desc">产品简介 <span class="hint">（一句话描述产品是什么）</span></label>
-                <input type="text" id="product_desc" name="product_desc"
-                       placeholder="例如: 全流程完善Vibe Coding代码生成和研发协助工具，支持从需求分析、代码生成、提示词记录、项目分析的全流程研发协助">
-            </div>
 
-            <!-- 搜索关键词 -->
-            <div class="form-group">
-                <label for="keywords">爬取关键词 <span class="hint">（输入需要收集的痛点数据在相关领域的关键词）</span></label>
-                <input type="text" id="keywords" name="keywords"
-                       placeholder="例如: Claude Code, Cursor AI, Vibe coding assistant" required>
-            </div>
+                <!-- 搜索关键词 -->
+                <div class="form-group">
+                    <label for="keywords">爬取关键词 <span class="hint">（输入需要收集的痛点数据在相关领域的关键词）</span></label>
+                    <input type="text" id="keywords" name="keywords"
+                           placeholder="例如: Claude Code, Cursor AI, Vibe coding assistant" required>
+                </div>
 
-            <!-- 数据来源平台 -->
-            <div class="form-group">
-                <label>数据来源平台</label>
-                <div class="platform-row">
-                    <label class="checkbox-item">
-                        <input type="checkbox" name="platforms" value="reddit" checked>
-                        Reddit
-                    </label>
-                    <label class="checkbox-item">
-                        <input type="checkbox" name="platforms" value="hackernews">
-                        Hacker News
-                    </label>
-                </div>
-                <div class="other-platform">
-                    <input type="text" id="other_platforms" name="other_platforms"
-                           placeholder="其他平台（如 LinkedIn、Twitter）— 暂不支持自动爬取，仅记录在报告中">
-                </div>
-            </div>
-
-            <!-- 板块选择（动态加载） -->
-            <div class="form-group" id="subredditSection">
-                <label>
-                    搜索板块
-                    <button type="button" id="suggestBtn" class="btn-sm">推荐板块</button>
-                </label>
-                <p class="hint" id="subredditHint">输入关键词后点击"推荐板块"，帮你自动推荐，或手动添加</p>
-                <div class="checkbox-grid" id="subredditGrid"></div>
-                <div class="add-subreddit">
-                    <input type="text" id="customSubreddit" placeholder="手动添加板块（如 Cursor）">
-                    <button type="button" id="addSubBtn" class="btn-sm">添加</button>
-                </div>
-            </div>
-
-            <!-- 时间范围 -->
-            <div class="form-group">
-                <label>时间范围</label>
-                <div class="time-presets">
-                    <label class="radio-item">
-                        <input type="radio" name="time_preset" value="3m">
-                        近 3 个月
-                    </label>
-                    <label class="radio-item">
-                        <input type="radio" name="time_preset" value="6m">
-                        近 6 个月
-                    </label>
-                    <label class="radio-item">
-                        <input type="radio" name="time_preset" value="1y" checked>
-                        近 1 年
-                    </label>
-                    <label class="radio-item">
-                        <input type="radio" name="time_preset" value="custom">
-                        自定义
-                    </label>
-                </div>
-                <div class="form-row hidden" id="customDateRow">
-                    <div class="form-group">
-                        <input type="date" id="time_start" name="time_start">
+                <!-- 数据来源平台 -->
+                <div class="form-group">
+                    <label>数据来源平台</label>
+                    <div class="platform-row">
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="platforms" value="reddit" checked>
+                            Reddit
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="platforms" value="hackernews" checked>
+                            Hacker News
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="platforms" value="web" checked>
+                            Web Search
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="platforms" value="x">
+                            X / Twitter
+                        </label>
                     </div>
-                    <div class="form-group">
-                        <input type="date" id="time_end" name="time_end">
+                    <div class="other-platform">
+                        <input type="text" id="other_platforms" name="other_platforms"
+                               placeholder="其他平台（如 LinkedIn、小红书、抖音）暂不支持自动爬取，仅记录在报告中">
                     </div>
                 </div>
-            </div>
 
-            <button type="submit" id="submitBtn">开始挖掘</button>
-            <span id="spinner" class="spinner hidden"></span>
-        </form>
-
-        <!-- 进度 -->
-        <div id="progress" class="progress-area hidden">
-            <div class="progress-bar-wrap">
-                <div class="progress-bar" id="progressBar"></div>
-            </div>
-            <p id="progressText"></p>
-        </div>
-
-        <!-- AI 复核 -->
-        <div id="review" class="review-area hidden">
-            <div class="review-head">
-                <div>
-                    <h2>AI 复核草稿</h2>
-                    <p id="reviewSummary"></p>
+                <!-- Reddit 社区限定（动态加载） -->
+                <div class="form-group" id="subredditSection">
+                    <label>
+                        限定 Reddit 社区 <span class="hint">（可选）</span>
+                        <button type="button" id="suggestBtn" class="btn-sm">推荐社区</button>
+                    </label>
+                    <p class="hint" id="subredditHint">不填写会搜索 Reddit 全站；只在想限定到某些社区时添加，例如 ClaudeCode、Cursor</p>
+                    <div class="checkbox-grid" id="subredditGrid"></div>
+                    <div class="add-subreddit">
+                        <input type="text" id="customSubreddit" placeholder="只填社区名，如 ClaudeCode 或 Cursor，不填关键词">
+                        <button type="button" id="addScopeBtn" class="btn-sm">添加</button>
+                    </div>
+                    <div class="scope-tags" id="scopeTags"></div>
+                    <p class="field-error hidden" id="scopeError"></p>
                 </div>
-                <button type="button" id="exportBtn" class="btn">确认导出报告</button>
-            </div>
-            <div id="normalizationStats" class="review-stats"></div>
 
-            <div class="review-section">
-                <h3>痛点复核</h3>
-                <div id="painReviewList" class="review-list"></div>
+                <!-- 时间范围 -->
+                <div class="form-group">
+                    <label>时间范围</label>
+                    <div class="time-presets">
+                        <label class="radio-item">
+                            <input type="radio" name="time_preset" value="3m">
+                            近 3 个月
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="time_preset" value="6m">
+                            近 6 个月
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="time_preset" value="1y" checked>
+                            近 1 年
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="time_preset" value="custom">
+                            自定义
+                        </label>
+                    </div>
+                    <div class="form-row hidden" id="customDateRow">
+                        <div class="form-group">
+                            <input type="date" id="time_start" name="time_start">
+                        </div>
+                        <div class="form-group">
+                            <input type="date" id="time_end" name="time_end">
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" id="submitBtn">开始挖掘</button>
+                <span id="spinner" class="spinner hidden"></span>
+            </form>
+
+            <!-- 进度 -->
+            <div id="progress" class="progress-area hidden">
+                <div class="progress-bar-wrap">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <p id="progressText"></p>
             </div>
 
-            <div class="review-section">
-                <h3>期待功能复核</h3>
-                <div id="featureReviewList" class="review-list"></div>
-            </div>
-        </div>
+            <!-- AI 复核 -->
+            <div id="review" class="review-area hidden">
+                <div class="review-head">
+                    <div>
+                        <h2>AI 复核草稿</h2>
+                        <p id="reviewSummary"></p>
+                    </div>
+                    <button type="button" id="exportBtn" class="btn">确认导出报告</button>
+                </div>
+                <div id="normalizationStats" class="review-stats"></div>
 
-        <!-- 结果 -->
-        <div id="result" class="result-area hidden">
-            <h2>挖掘完成</h2>
-            <div id="resultStats"></div>
-            <div class="result-actions">
-                <a id="downloadMd" class="btn" href="#">下载 Markdown</a>
-                <a id="downloadDocx" class="btn btn-secondary" href="#">下载 Word 文档</a>
-                <a id="downloadCsv" class="btn btn-secondary" href="#">下载 CSV</a>
+                <div class="review-section">
+                    <h3>痛点复核</h3>
+                    <div id="painReviewList" class="review-list"></div>
+                </div>
+
+                <div class="review-section">
+                    <h3>期待功能复核</h3>
+                    <div id="featureReviewList" class="review-list"></div>
+                </div>
             </div>
-        </div>
+
+            <!-- 结果 -->
+            <div id="result" class="result-area hidden">
+                <h2>挖掘完成</h2>
+                <div id="resultStats"></div>
+                <div class="result-actions">
+                    <a id="downloadMd" class="btn" href="#">下载 Markdown</a>
+                    <a id="downloadDocx" class="btn btn-secondary" href="#">下载 Word 文档</a>
+                    <a id="downloadCsv" class="btn btn-secondary" href="#">下载 CSV</a>
+                </div>
+            </div>
+
+            <div id="warningBox" class="warning-area hidden"></div>
+        </main>
     </div>
 
     <script>
@@ -158,8 +202,13 @@
     const subredditGrid = document.getElementById('subredditGrid');
     const reviewDiv = document.getElementById('review');
     const exportBtn = document.getElementById('exportBtn');
+    const customSubreddit = document.getElementById('customSubreddit');
+    const scopeTags = document.getElementById('scopeTags');
+    const scopeError = document.getElementById('scopeError');
+    const warningBox = document.getElementById('warningBox');
     let currentTaskId = null;
     let currentReview = null;
+    let manualScopes = [];
 
     // ---- 时间预设 ----
     const timePresets = document.querySelectorAll('input[name="time_preset"]');
@@ -201,7 +250,7 @@
         };
     }
 
-    // ---- 板块推荐 ----
+    // ---- Reddit 社区推荐 ----
     document.getElementById('suggestBtn').addEventListener('click', async () => {
         const kw = document.getElementById('keywords').value;
         if (!kw.trim()) { alert('请先输入关键词'); return; }
@@ -221,48 +270,104 @@
             subredditGrid.innerHTML = '';
             if (data.subreddits && data.subreddits.length > 0) {
                 document.getElementById('subredditHint').textContent =
-                    `根据关键词找到 ${data.subreddits.length} 个相关板块，请勾选需要的：`;
+                    `根据关键词找到 ${data.subreddits.length} 个相关社区；勾选后会只在这些社区内搜索：`;
                 data.subreddits.forEach(sub => {
                     const label = document.createElement('label');
                     label.className = 'checkbox-item';
                     label.innerHTML = `<input type="checkbox" name="subreddits" value="${sub.name}" checked>
-                        <span>r/${sub.name} <span class="sub-subs">(${(sub.subscribers || 0).toLocaleString()} 成员)</span></span>`;
+                        <span>${sub.name} <span class="sub-subs">(${(sub.subscribers || 0).toLocaleString()} 成员)</span></span>`;
                     subredditGrid.appendChild(label);
                 });
             } else {
-                document.getElementById('subredditHint').textContent = '未找到相关板块，请手动添加';
+                document.getElementById('subredditHint').textContent = '未找到推荐社区；可以留空搜索 Reddit 全站';
             }
         } catch (err) {
             alert('推荐失败: ' + err.message);
         } finally {
-            btn.textContent = '推荐板块';
+            btn.textContent = '推荐社区';
             btn.disabled = false;
         }
     });
 
-    // ---- 手动添加板块 ----
-    document.getElementById('addSubBtn').addEventListener('click', () => {
-        const input = document.getElementById('customSubreddit');
-        const name = input.value.trim().replace(/^r\//, '');
-        if (!name) return;
+    function normalizeScopeName(value) {
+        return value.trim().replace(/^r\//i, '');
+    }
 
-        // 检查是否已存在
-        const existing = subredditGrid.querySelectorAll('input[name="subreddits"]');
-        for (const el of existing) {
-            if (el.value.toLowerCase() === name.toLowerCase()) {
-                el.checked = true;
-                input.value = '';
-                return;
-            }
+    function isValidSubredditName(name) {
+        return /^[A-Za-z0-9_]{3,21}$/.test(name);
+    }
+
+    function setScopeError(message = '') {
+        scopeError.textContent = message;
+        scopeError.classList.toggle('hidden', !message);
+    }
+
+    function renderScopeTags() {
+        scopeTags.innerHTML = manualScopes.map(name =>
+            `<button type="button" class="scope-tag" data-name="${escapeHtml(name)}">${escapeHtml(name)} <span>×</span></button>`
+        ).join('');
+    }
+
+    function addManualScopes() {
+        const names = customSubreddit.value
+            .split(',')
+            .map(normalizeScopeName)
+            .filter(Boolean);
+        if (!names.length) return;
+
+        const invalid = names.filter(name => !isValidSubredditName(name));
+        if (invalid.length) {
+            setScopeError(`"${invalid.join(', ')}" 看起来不是 Reddit 社区名。关键词请放在上面的“爬取关键词”，这里可以留空。`);
+            return;
         }
 
-        const label = document.createElement('label');
-        label.className = 'checkbox-item';
-        label.innerHTML = `<input type="checkbox" name="subreddits" value="${name}" checked>
-            <span>r/${name}</span>`;
-        subredditGrid.appendChild(label);
-        input.value = '';
+        const existing = new Set(manualScopes.map(name => name.toLowerCase()));
+        names.forEach(name => {
+            if (!existing.has(name.toLowerCase())) {
+                manualScopes.push(name);
+                existing.add(name.toLowerCase());
+            }
+        });
+        customSubreddit.value = '';
+        setScopeError('');
+        renderScopeTags();
+    }
+
+    document.getElementById('addScopeBtn').addEventListener('click', addManualScopes);
+    customSubreddit.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            addManualScopes();
+        }
     });
+    scopeTags.addEventListener('click', (event) => {
+        const tag = event.target.closest('.scope-tag');
+        if (!tag) return;
+        manualScopes = manualScopes.filter(name => name !== tag.dataset.name);
+        setScopeError('');
+        renderScopeTags();
+    });
+
+    function getSearchScopes() {
+        const selected = Array.from(
+            form.querySelectorAll('input[name="subreddits"]:checked')
+        ).map(el => el.value.trim()).filter(Boolean);
+
+        const pending = customSubreddit.value
+            .split(',')
+            .map(normalizeScopeName)
+            .filter(Boolean);
+
+        const invalid = pending.filter(name => !isValidSubredditName(name));
+        if (invalid.length) {
+            setScopeError(`"${invalid.join(', ')}" 看起来不是 Reddit 社区名。关键词请放在上面的“爬取关键词”，这里可以留空。`);
+            return null;
+        }
+
+        return Array.from(new Set(
+            [...selected, ...manualScopes, ...pending].map(name => name.trim())
+        ));
+    }
 
     // ---- 提交 ----
     form.addEventListener('submit', async (e) => {
@@ -277,12 +382,8 @@
             return;
         }
 
-        const checked = form.querySelectorAll('input[name="subreddits"]:checked');
-        const subreddits = Array.from(checked).map(el => el.value);
-        if (platforms.includes('reddit') && subreddits.length === 0) {
-            alert('请至少选择一个 Reddit 板块');
-            return;
-        }
+        const subreddits = getSearchScopes();
+        if (subreddits === null) return;
 
         const dates = getDates();
 
@@ -305,6 +406,8 @@
         progressDiv.classList.remove('hidden');
         resultDiv.classList.add('hidden');
         reviewDiv.classList.add('hidden');
+        warningBox.classList.add('hidden');
+        warningBox.innerHTML = '';
         currentTaskId = null;
         currentReview = null;
         progressBar.style.width = '0%';
@@ -364,12 +467,23 @@
 
                     currentReview = data.result.review;
                     renderReview(data.result);
+                    renderWarnings(data.result.warnings);
 
                     reviewDiv.classList.remove('hidden');
                     submitBtn.disabled = false;
                     submitBtn.textContent = '重新挖掘';
                     document.getElementById('spinner').classList.add('hidden');
                     reviewDiv.scrollIntoView({behavior: 'smooth'});
+                } else if (data.status === 'empty') {
+                    clearInterval(interval);
+                    progressBar.style.width = '100%';
+                    progressText.textContent = data.progress || '没有找到可分析的帖子。';
+                    renderWarnings((data.result && data.result.warnings) || []);
+                    resultDiv.classList.add('hidden');
+                    reviewDiv.classList.add('hidden');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = '重新挖掘';
+                    document.getElementById('spinner').classList.add('hidden');
                 } else if (data.status === 'error') {
                     clearInterval(interval);
                     progressText.textContent = '错误: ' + data.progress;
@@ -524,6 +638,7 @@
             }
 
             showDownloads(data.result);
+            renderWarnings(data.result.warnings);
             resultDiv.classList.remove('hidden');
             progressText.textContent = '报告已生成。';
             resultDiv.scrollIntoView({behavior: 'smooth'});
@@ -545,6 +660,17 @@
         document.getElementById('downloadMd').href = '/download/' + mdFile;
         document.getElementById('downloadCsv').href = '/download/' + csvFile;
         document.getElementById('downloadDocx').href = '/download/' + docxFile;
+    }
+
+    function renderWarnings(warnings = []) {
+        const clean = warnings.filter(Boolean);
+        if (!clean.length) {
+            warningBox.classList.add('hidden');
+            warningBox.innerHTML = '';
+            return;
+        }
+        warningBox.innerHTML = `<strong>数据源提醒</strong><ul>${clean.map(msg => `<li>${escapeHtml(msg)}</li>`).join('')}</ul>`;
+        warningBox.classList.remove('hidden');
     }
     </script>
 </body>

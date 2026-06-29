@@ -1,4 +1,10 @@
-from .crawler import crawl_reddit, crawl_hackernews, suggest_subreddits
+from .crawler import (
+    crawl_reddit,
+    crawl_hackernews,
+    crawl_web_search,
+    crawl_x_search,
+    suggest_subreddits,
+)
 from .normalizer import normalize_posts
 from .analyzer import analyze_posts
 from .reviewer import create_review_draft, apply_review_to_analysis
