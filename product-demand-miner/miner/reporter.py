@@ -8,8 +8,44 @@ from datetime import datetime
 from docx import Document
 from docx.shared import Pt, Inches, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.oxml.ns import qn
 
 from .insights import infer_core_issue
+
+
+DOCX_FONT = "Microsoft YaHei"
+
+
+def _set_docx_font(element, font_name=DOCX_FONT):
+    """同时设置西文与东亚字体，避免 Word 把中文显示成方框。"""
+    r_pr = element.get_or_add_rPr()
+    r_fonts = r_pr.get_or_add_rFonts()
+    for font_slot in ("ascii", "hAnsi", "eastAsia"):
+        r_fonts.set(qn(f"w:{font_slot}"), font_name)
+
+
+def _apply_docx_fonts(doc):
+    """把字体应用到样式、正文、列表和表格中的所有文本。"""
+    style_names = ("Normal", "Title", "Subtitle", "Heading 1", "Heading 2", "Heading 3", "List Bullet")
+    for style_name in style_names:
+        if style_name not in doc.styles:
+            continue
+        style = doc.styles[style_name]
+        style.font.name = DOCX_FONT
+        _set_docx_font(style.element)
+
+    for paragraph in doc.paragraphs:
+        for run in paragraph.runs:
+            run.font.name = DOCX_FONT
+            _set_docx_font(run._element)
+
+    for table in doc.tables:
+        for row in table.rows:
+            for cell in row.cells:
+                for paragraph in cell.paragraphs:
+                    for run in paragraph.runs:
+                        run.font.name = DOCX_FONT
+                        _set_docx_font(run._element)
 
 
 def _generate_summary(product_name, analysis, product_scope=""):
@@ -216,8 +252,9 @@ def generate_docx(product_name, keywords, subreddits, time_range,
     doc = Document()
 
     style = doc.styles['Normal']
-    style.font.name = 'Microsoft YaHei'
+    style.font.name = DOCX_FONT
     style.font.size = Pt(11)
+    _set_docx_font(style.element)
 
     # 标题
     title = doc.add_heading(f'{product_name} 开发者痛点与市场调研报告', level=0)
@@ -354,6 +391,8 @@ def generate_docx(product_name, keywords, subreddits, time_range,
     footer = doc.add_paragraph('报告由 Product Demand Miner 自动生成')
     footer.runs[0].italic = True
     footer.runs[0].font.color.rgb = RGBColor(0x99, 0x99, 0x99)
+
+    _apply_docx_fonts(doc)
 
     docx_path = os.path.join(output_dir, f"{base}.docx")
     doc.save(docx_path)

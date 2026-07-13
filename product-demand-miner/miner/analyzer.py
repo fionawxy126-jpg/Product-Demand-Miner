@@ -1,12 +1,68 @@
 """
-数据清洗 + 痛点聚类模块
-动态聚类，按数据量排序，最多 10 个痛点 + 10 个期待功能
+Product-demand analysis.
+
+The analyzer keeps the original report contract while using broader, product-
+agnostic signals. It still supports AI-coding specific categories, but it no
+longer depends on them to produce useful pain-point and demand clusters.
 """
 
 import re
+from collections import defaultdict
 
-# 痛点模式库（会自动过滤无匹配的类别）
 PAIN_PATTERNS = {
+    "pricing_value": {
+        "label": "价格 / 性价比压力",
+        "patterns": [r"too expensive", r"overpriced", r"not worth", r"pricing", r"price",
+                     r"cost", r"charge", r"billing", r"subscription", r"plan", r"refund",
+                     r"paywall", r"free tier", r"cheaper", r"affordab"],
+    },
+    "reliability_stability": {
+        "label": "稳定性 / 可用性问题",
+        "patterns": [r"bug", r"broken", r"crash", r"unstable", r"doesn.?t work",
+                     r"not working", r"fails?", r"failure", r"outage", r"error",
+                     r"timeout", r"stuck", r"hang", r"regression"],
+    },
+    "workflow_friction": {
+        "label": "流程割裂 / 使用摩擦",
+        "patterns": [r"workflow", r"friction", r"annoying", r"tedious", r"manual",
+                     r"copy.?paste", r"switching", r"context switch", r"too many steps",
+                     r"hard to manage", r"cumbersome"],
+    },
+    "learning_setup": {
+        "label": "上手门槛 / 配置复杂",
+        "patterns": [r"hard to learn", r"steep learning", r"confusing", r"setup",
+                     r"install", r"configuration", r"docs?", r"documentation",
+                     r"unclear", r"overwhelming", r"onboarding"],
+    },
+    "integration_compatibility": {
+        "label": "集成 / 兼容性不足",
+        "patterns": [r"integration", r"compatible", r"incompatible", r"plugin",
+                     r"extension", r"api", r"sdk", r"connect", r"import", r"export",
+                     r"doesn.?t support", r"works with"],
+    },
+    "trust_safety_control": {
+        "label": "信任 / 安全 / 可控性担忧",
+        "patterns": [r"privacy", r"security", r"safe", r"trust", r"leak",
+                     r"sensitive", r"permission", r"access", r"control", r"audit",
+                     r"compliance", r"risk"],
+    },
+    "quality_accuracy": {
+        "label": "结果质量 / 准确性不稳定",
+        "patterns": [r"inaccurate", r"wrong", r"bad output", r"quality", r"inconsistent",
+                     r"unreliable", r"hallucinat", r"made up", r"mistake",
+                     r"doesn.?t understand", r"misunderstood"],
+    },
+    "performance_scale": {
+        "label": "性能 / 规模化瓶颈",
+        "patterns": [r"slow", r"latency", r"performance", r"scale", r"scaling",
+                     r"large project", r"big codebase", r"takes forever", r"lag",
+                     r"memory", r"resource", r"cpu", r"quota", r"limit"],
+    },
+    "missing_capability": {
+        "label": "关键能力缺失",
+        "patterns": [r"missing", r"lack", r"no support", r"wish", r"need", r"would love",
+                     r"feature request", r"should have", r"can.?t", r"unable to"],
+    },
     "prompt_error": {
         "label": "指令错误 / Prompt 不准",
         "patterns": [r"wrong prompt", r"prompt error", r"bad prompt", r"notice an error on my prompt",
@@ -104,8 +160,48 @@ PAIN_PATTERNS = {
     },
 }
 
-# 期待功能模式库
 FEATURE_PATTERNS = {
+    "automation_orchestration": {
+        "label": "自动化工作流 / 编排能力",
+        "patterns": [r"automate", r"automation", r"workflow", r"orchestrat", r"pipeline",
+                     r"agent", r"schedule", r"trigger", r"batch", r"hands.?off"],
+    },
+    "visibility_analytics": {
+        "label": "数据看板 / 可视化监控",
+        "patterns": [r"dashboard", r"analytics", r"visuali", r"monitor", r"tracking",
+                     r"metrics", r"insight", r"report", r"breakdown", r"visibility"],
+    },
+    "review_validation": {
+        "label": "审核 / 校验 / 质量控制",
+        "patterns": [r"review", r"validate", r"verify", r"check", r"approval",
+                     r"quality control", r"guardrail", r"test", r"evaluation",
+                     r"benchmark", r"sanity"],
+    },
+    "collaboration_sharing": {
+        "label": "协作 / 分享 / 团队流程",
+        "patterns": [r"collaborat", r"team", r"share", r"handoff", r"comment",
+                     r"permission", r"workspace", r"multi.?user", r"role"],
+    },
+    "integration_extension": {
+        "label": "集成扩展 / API 连接",
+        "patterns": [r"integration", r"api", r"sdk", r"plugin", r"extension",
+                     r"webhook", r"connect", r"export", r"import", r"native support"],
+    },
+    "personalization_control": {
+        "label": "个性化 / 控制面板",
+        "patterns": [r"custom", r"customi", r"config", r"setting", r"preference",
+                     r"template", r"rule", r"policy", r"control", r"fine.?tune"],
+    },
+    "memory_context": {
+        "label": "上下文记忆 / 项目知识库",
+        "patterns": [r"context", r"memory", r"knowledge", r"history", r"remember",
+                     r"resume", r"state", r"session", r"long.?term"],
+    },
+    "pricing_flexibility": {
+        "label": "灵活计费 / 成本控制",
+        "patterns": [r"pricing", r"budget", r"cost control", r"usage", r"spend",
+                     r"cap", r"limit", r"pay.?as.?you.?go", r"free tier"],
+    },
     "token_dashboard": {
         "label": "Token 使用仪表盘",
         "patterns": [r"token.*dashboard", r"token.*visuali", r"see.*token",
@@ -170,6 +266,28 @@ FEATURE_PATTERNS = {
 
 MAX_PAIN_POINTS = 10
 MAX_FEATURES = 10
+TOP_FALLBACK_POSTS = 8
+
+PAIN_SIGNAL_PATTERNS = [
+    r"\b(problem|issue|bug|broken|frustrating|annoying|pain|struggle|hard|difficult)\b",
+    r"\b(can.?t|cannot|unable|fails?|failed|doesn.?t work|not working)\b",
+    r"\b(expensive|overpriced|slow|confusing|missing|lack|limitation|risk)\b",
+]
+
+DEMAND_SIGNAL_PATTERNS = [
+    r"\b(wish|need|want|would love|feature request|should have|looking for)\b",
+    r"\b(add|support|integrate|automate|dashboard|export|import|customi[sz]e)\b",
+    r"\b(better|improve|improvement|alternative|solution)\b",
+]
+
+STOPWORDS = {
+    "about", "after", "again", "agent", "also", "because", "being", "build",
+    "built", "cannot", "claude", "codex", "could", "first", "from", "have",
+    "html", "http", "https", "into", "just", "like", "more", "need", "over",
+    "show", "that", "their",
+    "there", "these", "thing", "this", "using", "with", "without", "would",
+    "your", "what", "when", "where", "which", "while",
+}
 
 
 def _match(text, patterns):
@@ -178,6 +296,60 @@ def _match(text, patterns):
         if re.search(p, t):
             return True
     return False
+
+
+def _text(post):
+    return f"{post.get('title', '')} {post.get('body', '')}".strip()
+
+
+def _post_weight(post):
+    return max(post.get("score", 0), 0) + max(post.get("num_comments", 0), 0) * 0.35 + 1
+
+
+def _cluster_score(posts):
+    return sum(_post_weight(post) for post in posts)
+
+
+def _top_terms(posts, limit=4):
+    counts = defaultdict(int)
+    for post in posts:
+        text = _text(post).lower()
+        for word in re.findall(r"[a-z][a-z0-9_\-]{3,}", text):
+            if word in STOPWORDS:
+                continue
+            counts[word] += 1
+    return [word for word, _ in sorted(counts.items(), key=lambda item: item[1], reverse=True)[:limit]]
+
+
+def _make_fallback_label(prefix, posts):
+    terms = _top_terms(posts)
+    if terms:
+        return f"{prefix}: {' / '.join(terms[:3])}"
+    return prefix
+
+
+def _build_pain_item(key, label, matched):
+    matched.sort(key=lambda post: _post_weight(post), reverse=True)
+    total_score = sum(post.get("score", 0) for post in matched)
+    return {
+        "key": key,
+        "label": label,
+        "posts": matched,
+        "count": len(matched),
+        "total_comments": sum(post.get("num_comments", 0) for post in matched),
+        "avg_score": round(total_score / len(matched), 1),
+        "top_score": matched[0].get("score", 0),
+    }
+
+
+def _build_feature_item(key, label, matched):
+    matched.sort(key=lambda post: _post_weight(post), reverse=True)
+    return {
+        "key": key,
+        "label": label,
+        "posts": matched[:5],
+        "count": len(matched),
+    }
 
 
 def analyze_posts(posts):
@@ -200,41 +372,44 @@ def analyze_posts(posts):
             "top10": [],
         }
 
-    # 痛点聚类 → 列表 → 排序
     pain_list = []
     for cat, cfg in PAIN_PATTERNS.items():
-        matched = [p for p in posts if _match(p["title"] + " " + p["body"], cfg["patterns"])]
+        matched = [p for p in posts if _match(_text(p), cfg["patterns"])]
         if matched:
-            matched.sort(key=lambda x: x["score"], reverse=True)
-            total_score = sum(p["score"] for p in matched)
-            pain_list.append({
-                "key": cat,
-                "label": cfg["label"],
-                "posts": matched,
-                "count": len(matched),
-                "total_comments": sum(p["num_comments"] for p in matched),
-                "avg_score": round(total_score / len(matched), 1),
-                "top_score": matched[0]["score"],
-            })
+            pain_list.append(_build_pain_item(cat, cfg["label"], matched))
 
-    # 按相关帖子数 × 最高赞数综合排序，取 top 10
-    pain_list.sort(key=lambda x: x["count"] * (x["top_score"] + 1), reverse=True)
+    fallback_pain = [
+        p for p in posts
+        if _match(_text(p), PAIN_SIGNAL_PATTERNS)
+    ]
+    if fallback_pain:
+        pain_list.append(_build_pain_item(
+            "market_pain_signals",
+            _make_fallback_label("高信号痛点讨论", fallback_pain),
+            fallback_pain[:TOP_FALLBACK_POSTS],
+        ))
+
+    pain_list.sort(key=lambda item: item["count"] * _cluster_score(item["posts"]), reverse=True)
     pain_list = pain_list[:MAX_PAIN_POINTS]
 
-    # 期待功能聚类
     feat_list = []
     for cat, cfg in FEATURE_PATTERNS.items():
-        matched = [p for p in posts if _match(p["title"] + " " + p["body"], cfg["patterns"])]
+        matched = [p for p in posts if _match(_text(p), cfg["patterns"])]
         if matched:
-            matched.sort(key=lambda x: x["score"], reverse=True)
-            feat_list.append({
-                "key": cat,
-                "label": cfg["label"],
-                "posts": matched[:5],
-                "count": len(matched),
-            })
+            feat_list.append(_build_feature_item(cat, cfg["label"], matched))
 
-    feat_list.sort(key=lambda x: x["count"] * (x["posts"][0]["score"] + 1), reverse=True)
+    fallback_demand = [
+        p for p in posts
+        if _match(_text(p), DEMAND_SIGNAL_PATTERNS)
+    ]
+    if fallback_demand:
+        feat_list.append(_build_feature_item(
+            "market_demand_signals",
+            _make_fallback_label("高信号需求讨论", fallback_demand),
+            fallback_demand[:TOP_FALLBACK_POSTS],
+        ))
+
+    feat_list.sort(key=lambda item: item["count"] * _cluster_score(item["posts"]), reverse=True)
     feat_list = feat_list[:MAX_FEATURES]
 
     # 统计
