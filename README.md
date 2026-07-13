@@ -1,3 +1,4 @@
+<img width="1896" height="925" alt="image" src="https://github.com/user-attachments/assets/6090a53d-eea3-4e3e-90aa-cd03d9d4a024" />
 # Product Demand Miner
 
 Product Demand Miner is a small Flask tool for collecting public market signals from multiple sources, cleaning the raw posts, clustering pain points, adding a human review step, and exporting a research report.
